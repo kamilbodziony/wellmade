@@ -281,7 +281,6 @@ var ticking=false;
 function onScroll(){var h=document.documentElement,vh=window.innerHeight,y=h.scrollTop||window.pageYOffset||0;
  if(bar)bar.style.transform='scaleX('+(y/((h.scrollHeight-h.clientHeight)||1))+')';
  if(!reduce){var hy=Math.min(y,vh);
-  if(heroWrap){heroWrap.style.transform='translateY('+(hy*0.2)+'px)';heroWrap.style.opacity=String(Math.max(1-y/(vh*0.9),0))}
   if(heroBg){heroBg.style.transform='translateY('+(hy*0.4)+'px)'}
   pars.forEach(function(im){var ph=im.parentElement,r=ph.getBoundingClientRect();if(r.bottom<-50||r.top>vh+50)return;var off=(r.top+r.height/2)-vh/2,max=ph.clientHeight*0.12,ty=Math.max(Math.min(-off*0.07,max),-max);im.style.transform='translateY(calc(-50% + '+ty+'px))'});
  }
