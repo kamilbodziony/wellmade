@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Biblioteka Wellmade - wiedza o budowie marek suplementowych</title>
+<meta content="Biblioteka Wellmade: produkt, produkcja, GIS, marża, sklep, fulfillment, sprzedaż i skala marek suplementowych. Bez teorii. Z rynku." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --paper:#e7e3d8;
+  --paper2:#dcd7c9;
+  --paper3:#f4efe5;
+  --ink:#11100c;
+  --ink2:#1c1b15;
+  --accent:#ff3a14;
+  --muted:#6a665c;
+  --mutedd:#9a948a;
+  --line:rgba(17,16,12,.16);
+  --line2:rgba(17,16,12,.32);
+  --lined:rgba(231,227,216,.16);
+  --disp:"Archivo",sans-serif;
+  --sans:"Inter",system-ui,sans-serif;
+  --mono:"Space Mono",monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:9998;
+  pointer-events:none;
+  opacity:.05;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:120px;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:10002}
+.kicker,.ix{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:900;line-height:.94;letter-spacing:-.035em;text-transform:uppercase}
+em{font-style:normal;color:var(--accent)}
+.btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 28px;
+  border:1.5px solid var(--ink);
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border-radius:0;
+  transition:background .16s,color .16s,border-color .16s,transform .25s var(--ease);
+}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.btn-accent:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-light{background:transparent;color:var(--paper);border-color:var(--paper)}
+.btn-light:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+nav{position:sticky;top:0;z-index:50;background:rgba(231,227,216,.86);backdrop-filter:blur(10px);border-bottom:1.5px solid var(--ink)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--disp);font-weight:900;font-size:24px;letter-spacing:-.02em;text-transform:uppercase}
+.logo sup{color:var(--accent);font-size:11px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links .lk{position:relative;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.nav-links .lk::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s var(--ease)}
+.nav-links .lk:hover::after{transform:scaleX(1)}
+.nav-toggle{display:none;background:none;border:0;color:var(--ink);font-size:24px;cursor:pointer}
+section{position:relative;padding:104px 0;border-top:1.5px solid var(--ink)}
+.sec-head{display:grid;grid-template-columns:210px 1fr;gap:42px;align-items:start;margin-bottom:54px}
+.sec-head h2{font-size:clamp(34px,5.6vw,78px)}
+.sec-head p{font-family:var(--sans);color:var(--muted);margin-top:18px;font-size:18px;line-height:1.5;text-transform:none;letter-spacing:0;max-width:720px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.words .w{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(.72em) rotate(2deg);
+  transition:opacity .65s var(--ease),transform .65s var(--ease);
+  transition-delay:calc(var(--i,0)*34ms);
+}
+.words.in .w{opacity:1;transform:translateY(0) rotate(0deg)}
+.line-mask{display:block;overflow:hidden}
+.line-mask>span{display:block;transform:translateY(112%);transition:transform 1s var(--ease)}
+body.loaded .line-mask>span{transform:none}
+
+/* hero */
+.hero{
+  --heroY:0px;
+  --heroScale:1;
+  --gridY:0px;
+  position:relative;
+  min-height:calc(100vh - 68px);
+  overflow:hidden;
+  padding:88px 0 78px;
+  border-top:0;
+}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-grid-bg{
+  position:absolute;inset:-80px;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:58px 58px;
+  opacity:.45;
+  transform:translate3d(0,var(--gridY),0);
+}
+.hero-orb{
+  position:absolute;
+  right:-18vw;
+  top:-28vw;
+  width:82vw;
+  height:82vw;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,58,20,.22),rgba(231,227,216,0) 60%);
+  filter:blur(30px);
+  transform:translate3d(calc(var(--heroY)*-.12),calc(var(--heroY)*.16),0) scale(1.08);
+}
+.hero .wrap{position:relative;z-index:2}
+.hero-tags{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px;align-items:center;opacity:0;transform:translateY(16px);transition:opacity .8s ease .12s,transform .8s ease .12s}
+.hero-tags .sep{color:var(--accent)}
+body.loaded .hero-tags{opacity:1;transform:none}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:46px;align-items:end}
+.hero-title{transform:translate3d(0,var(--heroY),0) scale(var(--heroScale));transform-origin:0 0;will-change:transform}
+.hero h1{font-size:clamp(54px,10.6vw,148px);font-weight:900;line-height:.86;letter-spacing:-.055em;max-width:9.8ch}
+.hero h1 .line-mask:nth-child(1)>span{transition-delay:.05s}
+.hero h1 .line-mask:nth-child(2)>span{transition-delay:.16s}
+.hero h1 .line-mask:nth-child(3)>span{transition-delay:.27s}
+.hero-copy{margin-top:34px;max-width:680px;opacity:0;transform:translateY(18px);transition:opacity .8s ease .55s,transform .8s ease .55s}
+body.loaded .hero-copy{opacity:1;transform:none}
+.lead{font-family:var(--sans);font-size:20px;color:var(--muted);line-height:1.5;text-transform:none;letter-spacing:0}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+/* proof frame */
+.proof-card{
+  border:1.5px solid var(--ink);
+  background:rgba(243,238,227,.68);
+  position:relative;
+  overflow:hidden;
+  transform:translate3d(0,calc(var(--heroY)*-.18),0);
+  box-shadow:10px 10px 0 var(--ink);
+  opacity:0;
+  transition:opacity .75s ease .35s,transform .75s ease .35s,box-shadow .25s var(--ease);
+}
+body.loaded .proof-card{opacity:1}
+.proof-card:hover{box-shadow:14px 14px 0 var(--accent)}
+.proof-head{display:flex;align-items:center;justify-content:flex-start;gap:20px;padding:20px 22px;border-bottom:1.5px solid var(--ink)}
+.proof-title{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(27px,3.1vw,40px);line-height:.92;letter-spacing:-.045em}
+.proof-body{padding:0 22px}
+.proof-row{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border-bottom:1px solid var(--line);padding:18px 0}
+.proof-row:last-child{border-bottom:0}
+.proof-row b{font-family:var(--disp);font-size:clamp(34px,4vw,54px);line-height:.9;letter-spacing:-.045em;font-weight:900}
+.proof-row span{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--muted);letter-spacing:.04em;text-align:right;max-width:18ch}
+
+/* strip */
+.strip{background:var(--ink);color:var(--paper);overflow:hidden;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
+.track{display:flex;white-space:nowrap;width:max-content;animation:mq 34s linear infinite}
+.track span{font-family:var(--disp);font-weight:900;font-size:clamp(30px,4.5vw,62px);text-transform:uppercase;letter-spacing:-.025em;padding:18px .32em}
+.track .st{color:var(--accent)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* start */
+.start-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.card{border:1.5px solid var(--ink);background:rgba(243,238,227,.52);position:relative;overflow:hidden;transition:transform .22s var(--ease),box-shadow .22s var(--ease),background .22s var(--ease)}
+.card:hover{transform:translate(-4px,-4px);box-shadow:9px 9px 0 var(--ink);background:var(--paper3)}
+.feature{min-height:540px;padding:34px;display:flex;flex-direction:column}
+.stack{display:grid;gap:18px}
+.small-card{min-height:261px;padding:28px;display:flex;flex-direction:column}
+.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--muted);letter-spacing:.03em}
+.meta .dot{width:9px;height:9px;background:var(--accent);display:inline-block}
+.feature h3{font-size:clamp(40px,5.2vw,76px);line-height:.88;letter-spacing:-.052em;margin-top:28px}
+.small-card h3{font-size:34px;line-height:.95;letter-spacing:-.04em;margin-top:18px}
+.card p{color:var(--muted);margin-top:18px;max-width:58ch;text-transform:none;letter-spacing:0}
+.card-foot{margin-top:auto;padding-top:30px;display:flex;justify-content:space-between;align-items:end}
+.read{font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--accent);font-weight:700}
+.no{font-family:var(--disp);font-size:68px;line-height:.8;font-weight:900;color:transparent;-webkit-text-stroke:1.5px var(--ink);opacity:.9}
+.feature .no{font-size:112px}
+.card::after{content:"";position:absolute;inset:auto -15% -55% -15%;height:80%;background:radial-gradient(circle,rgba(255,58,20,.18),transparent 58%);opacity:0;transition:opacity .25s}
+.card:hover::after{opacity:1}
+
+/* sticky system */
+.sticky-system{padding:0;border-top:1.5px solid var(--ink)}
+.sticky-wrap{display:grid;grid-template-columns:.42fr .58fr;min-height:1320px}
+.sticky-left{position:sticky;top:68px;height:calc(100vh - 68px);display:flex;flex-direction:column;justify-content:space-between;padding:82px 44px 44px 0;border-right:1.5px solid var(--ink)}
+.sticky-left h2{font-size:clamp(42px,5.3vw,82px)}
+.sticky-left p{font-size:18px;color:var(--muted);max-width:38ch;margin-top:22px}
+.sticky-count{font-family:var(--disp);font-weight:900;font-size:clamp(60px,9vw,138px);line-height:.82;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.sticky-steps{padding:60px 0 60px 44px}
+.step-card{min-height:150px;display:grid;grid-template-columns:110px 1fr;gap:26px;align-items:start;border-top:1.5px solid var(--line2);padding:34px 0;opacity:.42;transform:translateX(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.step-card.in{opacity:1;transform:none}
+.step-card:last-child{border-bottom:1.5px solid var(--line2)}
+.step-num{font-family:var(--disp);font-size:66px;line-height:.85;font-weight:900;color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.step-card h3{font-size:30px;letter-spacing:-.035em}
+.step-card p{color:var(--muted);max-width:650px;margin-top:10px}
+
+/* categories */
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1.5px solid var(--ink);background:var(--ink);gap:1.5px}
+.cat{min-height:274px;padding:24px;background:var(--paper);display:flex;flex-direction:column;transition:background .22s var(--ease),color .22s var(--ease)}
+.cat:hover{background:var(--ink);color:var(--paper)}
+.cat-id{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700}
+.cat h3{font-size:31px;line-height:.94;letter-spacing:-.04em;margin-top:18px}
+.cat p{font-size:14px;color:var(--muted);margin-top:16px}
+.cat:hover p{color:var(--mutedd)}
+.cat small{margin-top:auto;font-family:var(--mono);text-transform:uppercase;font-size:11px;color:var(--accent);letter-spacing:.04em}
+
+/* horizontal case cards */
+.hscroll-section{height:320vh;padding:0;border-top:1.5px solid var(--ink);background:var(--ink);color:var(--paper)}
+.case-pin{position:sticky;top:68px;height:calc(100vh - 68px);overflow:hidden;display:flex;flex-direction:column}
+.case-head{padding:42px 0 24px;border-bottom:1.5px solid rgba(231,227,216,.18)}
+.case-head .wrap{display:grid;grid-template-columns:210px 1fr;gap:42px;align-items:end}
+.case-head h2{font-size:clamp(36px,5.3vw,80px)}
+.case-head p{color:var(--mutedd);font-size:18px;max-width:690px;margin-top:16px}
+.case-viewport{flex:1;overflow:hidden}
+.case-track{height:100%;display:flex;gap:24px;align-items:center;padding-left:max(32px,calc((100vw - 1240px)/2 + 32px));padding-right:36vw;will-change:transform}
+.case-card{flex:0 0 min(78vw,900px);height:66vh;min-height:470px;border:1.5px solid rgba(231,227,216,.28);background:#171610;display:grid;grid-template-columns:.92fr 1.08fr;overflow:hidden}
+.case-copy{padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+.case-copy h3{font-size:clamp(36px,4.6vw,70px)}
+.case-copy p{color:var(--mutedd);font-size:17px;max-width:44ch;margin-top:18px}
+.case-facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid rgba(231,227,216,.18);margin-top:24px}
+.case-facts div{padding:18px 12px 0 0;font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--mutedd)}
+.case-facts b{display:block;font-family:var(--disp);font-size:28px;color:var(--paper);letter-spacing:-.04em;margin-bottom:6px}
+.case-media{position:relative;overflow:hidden;background:#232116}
+.media-core{position:absolute;inset:-9%;will-change:transform;background:
+  linear-gradient(130deg,rgba(255,58,20,.72),rgba(255,58,20,.12) 42%,transparent 43%),
+  radial-gradient(circle at 66% 32%,rgba(244,239,229,.65),transparent 25%),
+  linear-gradient(45deg,#0f0e0a,#2a281d);
+  transform:translateY(0) scale(1.08);
+}
+.media-core.alt{background:
+  linear-gradient(135deg,rgba(231,227,216,.8),rgba(231,227,216,.06) 46%,transparent 47%),
+  radial-gradient(circle at 30% 70%,rgba(255,58,20,.55),transparent 24%),
+  linear-gradient(45deg,#12110d,#302d22);
+}
+.media-core.third{background:
+  repeating-linear-gradient(90deg,rgba(255,58,20,.85) 0 16px,transparent 16px 52px),
+  linear-gradient(135deg,#0e0d09,#403b2d);
+}
+.media-label{position:absolute;left:22px;bottom:22px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--paper);z-index:2}
+.media-label::before{content:"";display:block;width:58px;height:6px;background:var(--accent);margin-bottom:12px}
+
+/* article map */
+.article-section{padding-top:38px;border-top:1.5px solid var(--line2);margin-top:42px}
+.article-title{display:grid;grid-template-columns:210px 1fr;gap:42px;margin-bottom:22px}
+.article-title h3{font-size:45px}
+.article-title p{color:var(--muted);max-width:720px}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.article-card{padding:24px;min-height:268px;display:flex;flex-direction:column}
+.article-card h4{font-size:29px;line-height:.96;letter-spacing:-.036em;margin-top:18px}
+.article-card p{font-size:14.5px;color:var(--muted)}
+.planned{opacity:.82}
+.planned::before{content:"PLAN";position:absolute;right:18px;top:18px;font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:700}
+
+/* dictionary */
+.dict{background:var(--ink);color:var(--paper);padding:0;border-top:1.5px solid var(--ink)}
+.dict-panel{display:grid;grid-template-columns:.9fr 1.1fr}
+.dict-copy{padding:70px 42px 70px 0}
+.dict-copy h2{font-size:clamp(44px,5.6vw,84px);margin-top:18px}
+.dict-copy p{color:var(--mutedd);margin-top:22px;font-size:18px;max-width:48ch}
+.terms{display:grid;grid-template-columns:1fr 1fr;border-left:1.5px solid rgba(231,227,216,.22)}
+.term{padding:32px;border-right:1px solid rgba(231,227,216,.18);border-bottom:1px solid rgba(231,227,216,.18);transition:background .2s var(--ease)}
+.term:nth-child(2n){border-right:0}
+.term:hover{background:rgba(255,58,20,.08)}
+.term h3{font-size:35px;color:var(--accent)}
+.term p{color:var(--mutedd);margin-top:12px;font-size:14.5px}
+
+
+/* divider between dictionary and final CTA */
+.cta-divider{
+  background:var(--accent);
+  color:var(--ink);
+  border-top:1.5px solid var(--ink);
+  border-bottom:1.5px solid var(--ink);
+  overflow:hidden;
+}
+.cta-divider .track span{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.08em;
+  font-weight:700;
+  padding:12px 18px;
+}
+
+/* brand divider between dictionary and final CTA */
+.brand-separator{background:var(--paper3);color:var(--ink);border-top:1.5px solid var(--paper);border-bottom:1.5px solid var(--ink);overflow:hidden;white-space:nowrap}
+.sep-track{display:flex;width:max-content;animation:mq 32s linear infinite}
+.sep-track span{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;padding:13px 18px;color:var(--muted)}
+.sep-track span:nth-child(2n){color:var(--accent)}
+.final-paper{background:var(--paper3);color:var(--ink);border-top:0}
+.final-paper p{color:var(--muted)}
+.final-paper .btn-accent:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+/* homepage final CTA */
+.final{background:var(--paper3);color:var(--ink);text-align:center;padding:122px 0;border-top:1.5px solid var(--ink)}
+.final h2{font-size:clamp(40px,7vw,96px);margin:0 auto 20px;max-width:18ch}
+.final p{font-family:var(--sans);color:var(--muted);max-width:50ch;margin:0 auto 36px;font-size:18px;text-transform:none;letter-spacing:0;line-height:1.5}
+
+/* footer */
+footer{background:var(--ink);color:var(--paper);padding:48px 0 30px}
+.foot-word{font-family:var(--disp);font-weight:900;font-size:clamp(48px,13vw,150px);line-height:.85;letter-spacing:-.03em;text-transform:uppercase;border-bottom:1.5px solid var(--lined);padding-bottom:24px;margin-bottom:24px}
+.foot-word sup{color:var(--accent);font-size:.2em;vertical-align:super}
+.foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mutedd)}
+.foot-links{display:flex;gap:24px}
+.foot-links a:hover{color:var(--accent)}
+
+/* cursor from homepage */
+.cur-dot,.cur-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;will-change:transform}
+.cur-dot{width:7px;height:7px;background:var(--accent);z-index:10001;transform:translate(-50%,-50%)}
+.cur-ring{width:38px;height:38px;border:1.5px solid var(--accent);z-index:10000;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+.cur-ring.big{width:78px;height:78px;background:rgba(255,58,20,.12)}
+body.cursor-on{cursor:none}
+body.cursor-on a,body.cursor-on button,body.cursor-on .mag,body.cursor-on .card,body.cursor-on .cat,body.cursor-on .term{cursor:none}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .track{animation:none}
+  .words .w{opacity:1;transform:none;transition:none}
+  .line-mask>span{transform:none;transition:none}
+  .case-track{transform:none!important}
+}
+
+
+@media(max-width:980px){
+  .hero{min-height:auto}
+  .hero-layout,.start-grid,.sticky-wrap,.dict-panel{grid-template-columns:1fr}
+  .proof-card{max-width:520px;margin-top:20px}
+  .sec-head,.article-title,.case-head .wrap{grid-template-columns:1fr;gap:18px}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .sticky-wrap{min-height:auto}
+  .sticky-left{position:relative;top:auto;height:auto;border-right:0;border-bottom:1.5px solid var(--ink);padding:72px 0 36px}
+  .sticky-steps{padding:0 0 72px 0}
+  .hscroll-section{height:auto;padding:0;background:var(--ink)}
+  .case-pin{position:relative;top:auto;height:auto;overflow:visible}
+  .case-track{transform:none!important;display:grid;grid-template-columns:1fr;padding:32px}
+  .case-card{height:auto;min-height:0;grid-template-columns:1fr}
+  .case-media{min-height:320px;order:-1}
+  .article-grid{grid-template-columns:1fr 1fr}
+  .terms{border-left:0}
+  .dict-copy{padding:70px 0 36px}
+}
+@media(max-width:760px){
+  .wrap{padding:0 22px}
+  .nav-links{position:fixed;inset:68px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:1.5px solid var(--ink);padding:10px 32px 20px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links .lk{padding:13px 0;width:100%}
+  .nav-toggle{display:block}
+  .hero{padding:62px 0 56px}
+  .hero h1{font-size:clamp(50px,17vw,92px)}
+  .lead{font-size:18px}
+  .feature{min-height:440px}
+  .cat-grid,.article-grid,.terms{grid-template-columns:1fr}
+  .step-card{grid-template-columns:72px 1fr}
+  .step-num{font-size:48px}
+}
+
+
+</style>
+</head>
+<body>
+<div class="progress"></div>
+<nav>
+<div class="wrap nav-in">
+<a class="logo mag" href="index.html">Wellmade<sup>®</sup></a>
+<button aria-label="Menu" class="nav-toggle" id="tg">☰</button>
+<div class="nav-links" id="menu">
+<a class="lk" href="index.html#oferta">Oferta</a>
+<a class="lk" href="index.html#case">Realizacje</a>
+<a class="lk" href="#kategorie">Kategorie</a>
+<a class="lk" href="#artykuly">Artykuły</a>
+<a class="btn btn-accent mag" href="kontakt.html">Zbuduj markę</a>
+</div>
+</div>
+</nav>
+<header class="hero" id="top">
+<div class="hero-bg">
+<div class="hero-grid-bg"></div>
+<div class="hero-orb"></div>
+</div>
+<div class="wrap">
+<div class="hero-tags">
+<span class="tag">Wellmade Knowledge</span>
+<span class="sep">◆</span>
+<span class="tag">Formula to fulfillment</span>
+<span class="sep">◆</span>
+<span class="tag">Built to sell</span>
+</div>
+<div class="hero-layout">
+<div>
+<div class="hero-title">
+<h1>
+<span class="line-mask"><span>Marki nie</span></span>
+<span class="line-mask"><span>padają przez</span></span>
+<span class="line-mask"><span>brak <em>logo.</em></span></span>
+</h1>
+</div>
+<div class="hero-copy">
+<p class="lead">Padają przez zły produkt, słabą marżę, chaos w produkcji, nielegalne claimy, pusty sklep i brak systemu sprzedaży.</p>
+<div class="hero-actions">
+<a class="btn btn-accent mag" href="#start">Zacznij od tekstów</a>
+<a class="btn btn-ghost mag" href="#system">Zobacz system</a>
+</div>
+</div>
+</div>
+<aside aria-label="Dowód operacyjny" class="proof-card">
+<div class="proof-head">
+<div>
+<div class="kicker">Proof ledger</div>
+<div class="proof-title">Nie teoria.<br/>Rynek.</div>
+</div>
+</div>
+<div class="proof-body">
+<div class="proof-row"><b>25 mln+</b><span>wygenerowanego przychodu</span></div>
+<div class="proof-row"><b>200 000+</b><span>sprzedanych produktów</span></div>
+<div class="proof-row"><b>7 lat</b><span>w suplementach</span></div>
+</div>
+</aside>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="strip">
+<div class="track">
+<span>Made to sell.</span><span class="st">◆</span><span>Made to scale.</span><span class="st">◆</span><span>Made to last.</span><span class="st">◆</span><span>Well made.</span><span class="st">◆</span>
+<span>Made to sell.</span><span class="st">◆</span><span>Made to scale.</span><span class="st">◆</span><span>Made to last.</span><span class="st">◆</span><span>Well made.</span><span class="st">◆</span>
+<span>Made to sell.</span><span class="st">◆</span><span>Made to scale.</span><span class="st">◆</span><span>Made to last.</span><span class="st">◆</span><span>Well made.</span><span class="st">◆</span>
+</div>
+</div>
+<section id="start">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="kicker">(01) Start</span>
+<div>
+<h2 class="words">Teksty, które zdejmują iluzje.</h2>
+<p>Startujemy od tematów, które odpowiadają na najdroższe pytania: co zbudować, ile to kosztuje, kto ma to dowieźć i gdzie najczęściej przepala się budżet.</p>
+</div>
+</div>
+<div class="start-grid">
+<a class="card feature reveal mag" href="jak-stworzyc-wlasna-marke-suplementow.html">
+<div class="meta"><span class="dot"></span><span>Start marki</span><span>Przewodnik</span></div>
+<h3>Jak stworzyć własną markę suplementów w Polsce</h3>
+<p>Pełny proces od niszy i produktu po GIS, sklep, fulfillment i sprzedaż. Jeden tekst, który ustawia cały temat.</p>
+<div class="card-foot"><span class="read">Czytaj tekst</span><span class="no">01</span></div>
+</a>
+<div class="stack">
+<a class="card small-card reveal mag" href="ile-kosztuje-stworzenie-marki-suplementow.html">
+<div class="meta"><span class="dot"></span><span>Ekonomia marki</span><span>Koszty</span></div>
+<h3>Ile kosztuje stworzenie marki suplementów?</h3>
+<p>Produkcja, MOQ, badania, GIS, branding, sklep, fulfillment i budżet launchu.</p>
+<div class="card-foot"><span class="read">Czytaj tekst</span><span class="no">02</span></div>
+</a>
+<a class="card small-card reveal mag" href="producent-suplementow-czy-studio-marki.html">
+<div class="meta"><span class="dot"></span><span>Produkt i produkcja</span><span>Decyzja</span></div>
+<h3>Producent czy studio marki?</h3>
+<p>Kiedy wystarczy produkt, a kiedy potrzebujesz systemu, który dowozi markę.</p>
+<div class="card-foot"><span class="read">Czytaj tekst</span><span class="no">03</span></div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="sticky-system" id="system">
+<div class="wrap sticky-wrap">
+<div class="sticky-left">
+<div>
+<span class="kicker">(02) System</span>
+<h2 class="words">Od pomysłu do marki gotowej do sprzedaży.</h2>
+<p>Biblioteka jest ułożona jak proces budowy marki: krok po kroku, bez przypadkowych wpisów i bez contentowego szumu.</p>
+</div>
+<div class="sticky-count">10</div>
+</div>
+<div class="sticky-steps">
+<div class="step-card"><span class="step-num">01</span><div><h3>Nisza</h3><p>Komu sprzedajesz, jaki problem rozwiązujesz i czy ten problem wraca co miesiąc.</p></div></div>
+<div class="step-card"><span class="step-num">02</span><div><h3>Formuła</h3><p>Co trafia do produktu, w jakiej dawce i czy da się to obronić rynkowo oraz prawnie.</p></div></div>
+<div class="step-card"><span class="step-num">03</span><div><h3>Producent</h3><p>MOQ, terminy, jakość, badania i ryzyko zamrożenia pieniędzy w złej partii.</p></div></div>
+<div class="step-card"><span class="step-num">04</span><div><h3>GIS</h3><p>Powiadomienie, claimy, etykieta i legalna komunikacja bez zabijania sprzedaży.</p></div></div>
+<div class="step-card"><span class="step-num">05</span><div><h3>Branding</h3><p>Nazwa, pozycjonowanie, packaging i język marki, który nie wygląda jak katalog producenta.</p></div></div>
+<div class="step-card"><span class="step-num">06</span><div><h3>Sklep</h3><p>Karta produktu, oferta, porównania, subskrypcje i ścieżka zakupowa.</p></div></div>
+<div class="step-card"><span class="step-num">07</span><div><h3>Fulfillment</h3><p>Magazyn, wysyłka, zwroty i system, który nie rozsypuje się przy pierwszym wzroście.</p></div></div>
+<div class="step-card"><span class="step-num">08</span><div><h3>Launch</h3><p>Wejście na rynek, kampanie, seeding, pierwsze zamówienia i pierwsze dane.</p></div></div>
+<div class="step-card"><span class="step-num">09</span><div><h3>Retencja</h3><p>E-mail, SMS, subskrypcje, repeat purchase i powód, żeby klient wracał.</p></div></div>
+<div class="step-card"><span class="step-num">10</span><div><h3>Skala</h3><p>Decyzja, czy marka jest gotowa na większy budżet, więcej SKU i większą dystrybucję.</p></div></div>
+</div>
+</div>
+</section>
+<section id="kategorie">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="kicker">(03) Kategorie</span>
+<div>
+<h2 class="words">Wybierz, gdzie masz problem.</h2>
+<p>Pięć obszarów wiedzy. Każdy odpowiada na inny etap decyzji: od pierwszego pomysłu po sprzedaż, operacje i skalowanie.</p>
+</div>
+</div>
+<div class="cat-grid reveal">
+<a class="cat mag" href="#start-marki"><span class="cat-id">01</span><h3>Start marki</h3><p>Pomysł, nisza i decyzja, czy w ogóle warto to budować.</p><small>Od pomysłu</small></a>
+<a class="cat mag" href="#produkt-produkcja"><span class="cat-id">02</span><h3>Produkt i produkcja</h3><p>Formuła, white label, producent, MOQ, badania i pierwsza partia.</p><small>Od produktu</small></a>
+<a class="cat mag" href="#prawo"><span class="cat-id">03</span><h3>Prawo i compliance</h3><p>GIS, etykieta, claimy i legalna komunikacja bez zabijania sprzedaży.</p><small>Od ryzyka</small></a>
+<a class="cat mag" href="#sprzedaz"><span class="cat-id">04</span><h3>Sprzedaż i skala</h3><p>Sklep, oferta, reklamy, retencja, subskrypcja i marketplace.</p><small>Od sprzedaży</small></a>
+<a class="cat mag" href="#ekonomia"><span class="cat-id">05</span><h3>Ekonomia marki</h3><p>Koszty, marża, CAC, LTV, cashflow i decyzje, które robią wynik.</p><small>Od liczb</small></a>
+</div>
+</div>
+</section>
+<section id="artykuly">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="kicker">(04) Artykuły</span>
+<div>
+<h2 class="words">Nie blog. Manual rynku.</h2>
+<p>Nie piszemy o suplementach. Piszemy o markach, które mają sprzedawać: produkt, marża, GIS, sklep, fulfillment, sprzedaż i skala - bez teorii i bez pudru.</p>
+</div>
+</div>
+<div class="article-section" id="start-marki">
+<div class="article-title reveal"><span class="kicker">Start marki</span><div><h3>Start marki</h3><p>Od pomysłu, niszy i decyzji, czy w ogóle warto to budować.</p></div></div>
+<div class="article-grid">
+<a class="card article-card reveal mag" href="jak-stworzyc-wlasna-marke-suplementow.html"><div class="meta"><span class="dot"></span><span>Start</span></div><h4>Jak stworzyć własną markę suplementów w Polsce</h4><p>Proces od niszy po sprzedaż, bez udawania że logo wystarczy.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="firma-do-stworzenia-marki-suplementow.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Firma do stworzenia marki suplementów - kogo wybrać?</h4><p>Producent, agencja, freelancerzy czy studio end-to-end.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="jak-uruchomic-marke-suplementow-w-90-dni.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Jak uruchomić markę suplementów w 90 dni?</h4><p>Harmonogram, decyzje i minimalny zakres sensownego launchu.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+</div>
+</div>
+<div class="article-section" id="produkt-produkcja">
+<div class="article-title reveal"><span class="kicker">Produkt i produkcja</span><div><h3>Produkt i produkcja</h3><p>Formuła, white label, producent, MOQ, badania i pierwsza partia.</p></div></div>
+<div class="article-grid">
+<a class="card article-card reveal mag" href="producent-suplementow-czy-studio-marki.html"><div class="meta"><span class="dot"></span><span>Produkt</span></div><h4>Producent suplementów czy studio marki?</h4><p>Kiedy produkt wystarczy, a kiedy potrzebujesz całego systemu.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="white-label-czy-wlasna-formula.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>White label czy własna formuła?</h4><p>Szybkość, koszt, unikalność i ryzyko przeciętności.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="jak-znalezc-producenta-suplementow.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Jak znaleźć producenta suplementów?</h4><p>Pytania, które trzeba zadać zanim podpiszesz pierwsze zamówienie.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+</div>
+</div>
+<div class="article-section" id="prawo">
+<div class="article-title reveal"><span class="kicker">Prawo i compliance</span><div><h3>Prawo i compliance</h3><p>GIS, etykieta, claimy i legalna komunikacja bez zabijania sprzedaży.</p></div></div>
+<div class="article-grid">
+<a class="card article-card reveal mag" href="jak-legalnie-sprzedawac-suplementy.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Jak legalnie sprzedawać suplementy w Polsce?</h4><p>GIS, claimy, etykiety i ryzyka, które trzeba ogarnąć przed startem.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="powiadomienie-gis-suplementu.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Powiadomienie GIS suplementu - krok po kroku</h4><p>Co przygotować, gdzie zgłosić i na co uważać przy starcie.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="etykieta-suplementu-czego-nie-pisac.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Czego nie wolno pisać na etykiecie suplementu?</h4><p>Granice komunikacji, które decydują o legalności i reklamach.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+</div>
+</div>
+<div class="article-section" id="sprzedaz">
+<div class="article-title reveal"><span class="kicker">Sprzedaż i skala</span><div><h3>Sprzedaż i skala</h3><p>Sklep, oferta, reklamy, retencja, subskrypcja i marketplace.</p></div></div>
+<div class="article-grid">
+<a class="card article-card reveal mag" href="jak-sprzedawac-suplementy-online.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Jak sprzedawać suplementy online?</h4><p>Sklep, oferta, ruch, konwersja i powrót klienta po kolejne opakowanie.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="marka-suplementow-dla-influencera.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Marka suplementów dla influencera</h4><p>Jak zamienić uwagę w produkt bez produkcyjnego chaosu.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="pierwsi-klienci-marki-suplementow.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Jak znaleźć pierwszych klientów dla marki suplementów?</h4><p>Launch, seeding, oferta i pierwsze dane sprzedażowe.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+</div>
+</div>
+<div class="article-section" id="ekonomia">
+<div class="article-title reveal"><span class="kicker">Ekonomia marki</span><div><h3>Ekonomia marki</h3><p>Koszty, marża, CAC, LTV, cashflow i decyzje, które robią wynik.</p></div></div>
+<div class="article-grid">
+<a class="card article-card reveal mag" href="ile-kosztuje-stworzenie-marki-suplementow.html"><div class="meta"><span class="dot"></span><span>Koszty</span></div><h4>Ile kosztuje stworzenie marki suplementów?</h4><p>Budżet startowy, koszty ukryte i miejsca, w których najłatwiej stracić pieniądze.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="jak-policzyc-marze-w-marce-suplementowej.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Jak policzyć marżę w marce suplementowej?</h4><p>Produkcja, fulfillment, reklamy, podatki i cashflow po pierwszej sprzedaży.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+<a class="card article-card reveal mag" href="dlaczego-marki-suplementow-nie-zarabiaja.html"><div class="meta"><span class="dot"></span><span>Wiedza</span></div><h4>Dlaczego większość marek suplementów nie zarabia?</h4><p>Najczęstsze błędy, które wyglądają niewinnie przed launchem.</p><div class="card-foot"><span class="read">Czytaj</span></div></a>
+</div>
+</div>
+</div>
+</section>
+<section class="dict" id="slownik">
+<div class="wrap dict-panel">
+<div class="dict-copy reveal">
+<span class="kicker">(05) Słownik Wellmade</span>
+<h2 class="words">Słownik, który tłumaczy decyzje.</h2>
+<p>MOQ, GIS, white label, DTC, fulfillment, claimy. Krótkie definicje pojęć, które trzeba rozumieć, zanim przepalisz budżet.</p>
+<a class="btn btn-light mag" href="slownik.html">Otwórz słownik</a>
+</div>
+<div class="terms"><a class="term mag" href="slownik-moq.html"><h3>MOQ</h3><p>Minimalna partia, która ustawia budżet i ryzyko zapasu.</p></a><a class="term mag" href="slownik-marza-kontrybucyjna.html"><h3>Marża kontrybucyjna</h3><p>Czy zamówienie dokłada gotówkę, czy tylko wygląda dobrze w raporcie.</p></a><a class="term mag" href="slownik-cash-conversion-cycle.html"><h3>Cash Conversion Cycle</h3><p>Czas między produkcją a odzyskaniem gotówki ze sprzedaży.</p></a><a class="term mag" href="slownik-gis.html"><h3>GIS</h3><p>Legalny start produktu i granice komunikacji suplementu.</p></a><a class="term mag" href="slownik-wis.html"><h3>WIS</h3><p>Stawka VAT, która wpływa na cenę i marżę.</p></a><a class="term mag" href="slownik-fulfillment.html"><h3>Fulfillment</h3><p>Operacje po zakupie: magazyn, wysyłka, zwroty i statusy.</p></a></div>
+</div>
+</section>
+<div aria-hidden="true" class="cta-divider"><div class="track"><span>Made to sell.</span><span>◆</span><span>Made to scale.</span><span>◆</span><span>Made to last.</span><span>◆</span><span>Well made.</span><span>◆</span><span>Made to sell.</span><span>◆</span><span>Made to scale.</span><span>◆</span><span>Made to last.</span><span>◆</span><span>Well made.</span><span>◆</span></div></div>
+<section class="final">
+<div class="wrap">
+<h2 class="words">Twoja marka może być następna.</h2>
+<p class="reveal">Jedna rozmowa. Powiemy wprost, czy się nadajesz, ile to potrwa i ile zarobisz.</p>
+<a class="btn btn-accent mag reveal" href="kontakt.html">Zbuduj moją markę</a>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<div class="foot-word">Wellmade<sup>®</sup></div>
+<div class="foot-in">
+<span>© 2026 Wellmade - studio marek suplementowych</span>
+<span class="foot-links"><a href="index.html#oferta">Oferta</a><a href="biblioteka.html">Biblioteka</a><a href="faq.html">FAQ</a><a href="kontakt.html">Kontakt</a><a href="https://midasforscale.com/" target="_blank" rel="noopener" style="color:var(--accent)">Midas AI &#8599;</a></span>
+</div>
+</div>
+</footer>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var fine=matchMedia('(pointer:fine)').matches;
+var tg=document.getElementById('tg'),menu=document.getElementById('menu');
+if(tg&&menu){
+  tg.addEventListener('click',function(){menu.classList.toggle('open')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+}
+function load(){document.body.classList.add('loaded')}
+if(document.readyState==='complete')load();else window.addEventListener('load',load);
+setTimeout(load,700);
+
+/* split word reveal */
+document.querySelectorAll('.words').forEach(function(el){
+  if(el.dataset.split)return;
+  var nodes=Array.from(el.childNodes);
+  el.textContent='';
+  var i=0;
+  nodes.forEach(function(node){
+    var text=node.textContent||'';
+    var parts=text.split(/(\s+)/);
+    parts.forEach(function(part){
+      if(!part)return;
+      if(/\s+/.test(part)){el.appendChild(document.createTextNode(part));return;}
+      var span=document.createElement('span');
+      span.className='w';
+      span.style.setProperty('--i',i++);
+      span.textContent=part;
+      el.appendChild(span);
+    });
+  });
+  el.dataset.split='1';
+});
+
+/* reveal observer */
+var els=document.querySelectorAll('.reveal,.words,.step-card');
+if(!('IntersectionObserver' in window)||reduce){
+  els.forEach(function(e){e.classList.add('in')});
+}else{
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+}
+
+/* scroll reactions */
+var bar=document.querySelector('.progress');
+var hero=document.querySelector('.hero');
+var hsection=document.querySelector('.hscroll-section');
+var track=document.querySelector('.case-track');
+var medias=document.querySelectorAll('.media-core,.visual-core');
+
+function clamp(n,min,max){return Math.max(min,Math.min(max,n))}
+function onScroll(){
+  var doc=document.documentElement;
+  var max=doc.scrollHeight-doc.clientHeight||1;
+  var sc=doc.scrollTop/max;
+  if(bar)bar.style.transform='scaleX('+sc+')';
+
+  if(hero){
+    var y=window.scrollY||doc.scrollTop;
+    var p=clamp(y/(hero.offsetHeight||1),0,1);
+    hero.style.setProperty('--heroY',(p*54)+'px');
+    hero.style.setProperty('--heroScale',(1-p*.045).toString());
+    hero.style.setProperty('--gridY',(p*130)+'px');
+  }
+
+  if(hsection&&track&&window.innerWidth>980&&!reduce){
+    var rect=hsection.getBoundingClientRect();
+    var total=hsection.offsetHeight-window.innerHeight;
+    var p2=clamp(-rect.top/(total||1),0,1);
+    var distance=track.scrollWidth-window.innerWidth+window.innerWidth*.06;
+    track.style.transform='translate3d('+(-distance*p2)+'px,0,0)';
+  }
+
+  medias.forEach(function(m){
+    var r=m.parentElement.getBoundingClientRect();
+    var center=(r.top+r.height/2)-window.innerHeight/2;
+    var move=clamp(center*.08,-42,42);
+    m.style.transform='translate3d(0,'+move+'px,0) scale(1.12)';
+  });
+}
+addEventListener('scroll',onScroll,{passive:true});
+addEventListener('resize',onScroll);
+onScroll();
+
+/* cursor + magnetic - same behaviour as homepage */
+if(fine&&!reduce){
+  document.body.classList.add('cursor-on');
+  var dot=document.createElement('div');dot.className='cur-dot';
+  var ring=document.createElement('div');ring.className='cur-ring';
+  document.body.appendChild(dot);document.body.appendChild(ring);
+  var mx=0,my=0,rx=0,ry=0;
+  addEventListener('mousemove',function(e){
+    mx=e.clientX;my=e.clientY;
+    dot.style.transform='translate('+mx+'px,'+my+'px) translate(-50%,-50%)';
+  });
+  (function loop(){
+    rx+=(mx-rx)*.18;ry+=(my-ry)*.18;
+    ring.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a,button,.card,.cat,.term').forEach(function(el){
+    el.addEventListener('mouseenter',function(){ring.classList.add('big')});
+    el.addEventListener('mouseleave',function(){ring.classList.remove('big')});
+  });
+  document.querySelectorAll('.mag').forEach(function(b){
+    b.addEventListener('mousemove',function(e){
+      var r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
+      b.style.transform='translate('+dx*.18+'px,'+dy*.18+'px)';
+    });
+    b.addEventListener('mouseleave',function(){b.style.transform=''});
+  });
+}
+})();
+</script>
+</body>
+</html>

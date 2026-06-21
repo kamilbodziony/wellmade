@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Realizacje - Kanaste | Wellmade</title>
+<title>Kanaste &mdash; case study | Wellmade</title>
+<meta name="description" content="Jak z 100 000 zł kapitału zbudowaliśmy markę CBD, która zrobiła 13 mln zł przychodu w 24 miesiące.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#e7e3d8;--paper2:#dcd7c9;--ink:#11100c;--ink2:#1c1b15;--accent:#ff3a14;--muted:#6a665c;--mutedd:#9a948a;--line:rgba(17,16,12,.16);--lined:rgba(231,227,216,.16);--disp:"Archivo",sans-serif;--sans:"Inter",system-ui,sans-serif;--mono:"Space Mono",monospace}
+:root{--paper:#e7e3d8;--paper2:#dcd7c9;--paper3:#f1ede3;--ink:#11100c;--ink2:#1c1b15;--accent:#ff3a14;--muted:#6a665c;--mutedd:#9a948a;--line:rgba(17,16,12,.16);--lined:rgba(231,227,216,.16);--disp:"Archivo",sans-serif;--sans:"Inter",system-ui,sans-serif;--mono:"Space Mono",monospace}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:120px}
+body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:120px}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:10002}
 .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
-.narrow{max-width:820px}
+.narrow{max-width:880px}
 a{color:inherit;text-decoration:none}
 .tag{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .ix{font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--accent);font-weight:700}
 h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:.96;letter-spacing:-.02em;text-transform:uppercase}
 em{font-style:normal;color:var(--accent)}
-.btn{display:inline-block;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:16px 28px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:0;cursor:pointer;transition:.16s}
+.btn{position:relative;display:inline-block;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:16px 28px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;transition:background .16s,color .16s,border-color .16s,transform .25s cubic-bezier(.16,1,.3,1)}
 .btn:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
 .btn-accent{background:var(--accent);border-color:var(--accent);color:var(--ink)}
 .btn-accent:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
@@ -28,173 +29,227 @@ nav{position:sticky;top:0;z-index:50;background:rgba(231,227,216,.86);backdrop-f
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{font-family:var(--disp);font-weight:900;font-size:24px;letter-spacing:-.02em;text-transform:uppercase}
 .logo sup{color:var(--accent);font-size:11px}
-.nav-links{display:flex;align-items:center;gap:30px}
-.nav-links .lk{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
-.nav-links .lk:hover{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links .lk{position:relative;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.nav-links .lk::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.nav-links .lk:hover::after{transform:scaleX(1)}
 .nav-toggle{display:none;background:none;border:0;color:var(--ink);font-size:24px;cursor:pointer}
-section{padding:96px 0;border-top:1.5px solid var(--ink)}
-.sec-head{max-width:60ch;margin-bottom:48px}
+section{padding:104px 0;border-top:1.5px solid var(--ink)}
+.sec-head{max-width:60ch;margin-bottom:52px}
 .sec-head .ix{display:block;margin-bottom:18px}
 .sec-head h2{font-size:clamp(34px,5.5vw,72px)}
 .sec-head p{font-family:var(--sans);color:var(--muted);margin-top:18px;font-size:18px;text-transform:none;letter-spacing:0;line-height:1.5}
-.hero{padding:80px 0 70px;border-top:0}
-.hero .tags{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;align-items:center}
-.hero .tags .sep{color:var(--accent)}
-.hero h1{font-size:clamp(44px,10.5vw,150px);font-weight:900}
-.hero .lead{font-family:var(--sans);font-size:20px;color:var(--muted);max-width:50ch;line-height:1.5;text-transform:none;letter-spacing:0}
-.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:48px;flex-wrap:wrap}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-.marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:20px 0;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
-.mq-track{display:flex;white-space:nowrap;width:max-content;animation:mq 30s linear infinite}
-.mq-track span{font-family:var(--disp);font-weight:800;font-size:clamp(28px,4.4vw,56px);text-transform:uppercase;letter-spacing:-.01em;padding:0 .35em}
-.mq-track .st{color:var(--accent)}
-@keyframes mq{to{transform:translateX(-50%)}}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.stat{padding:8px 28px 8px 0;border-left:1.5px solid var(--ink);padding-left:28px}
-.stat:first-child{border-left:0;padding-left:0}
-.stat .num{font-family:var(--disp);font-weight:900;font-size:clamp(46px,8vw,108px);line-height:.9;letter-spacing:-.03em}
-.stat .num span{color:var(--accent)}
-.stat .lbl{font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-top:16px}
-.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid var(--ink)}
-.tier{padding:32px;border-left:1.5px solid var(--ink);display:flex;flex-direction:column}
-.tier:first-child{border-left:0}
-.tier.feat{background:var(--ink);color:var(--paper)}
-.tier.feat .tier-ix,.tier.feat .price{color:var(--accent)}
-.tier.feat .pitch{color:var(--mutedd)}
-.tier-ix{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
-.tier h3{font-size:30px;margin:14px 0 0}
-.tier .price{font-family:var(--disp);font-weight:900;font-size:44px;letter-spacing:-.02em;margin:18px 0 2px}
-.tier .price small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:0;color:var(--muted);margin-top:10px;text-transform:uppercase}
-.tier.feat .price small{color:var(--mutedd)}
-.tier .pitch{font-family:var(--sans);color:var(--muted);font-size:15px;margin:14px 0 20px;line-height:1.5}
-.tier .pkg{border-top:1.5px solid currentColor;margin-bottom:22px}
-.tier .pkg summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.tier .pkg summary::-webkit-details-marker{display:none}
-.tier .pkg summary::after{content:"[+]"}
-.tier .pkg[open] summary::after{content:"[--]"}
-.tier .pkg ul{list-style:none;padding:0 0 6px;margin:0}
-.tier .pkg li{position:relative;padding:8px 0 8px 22px;font-family:var(--sans);font-size:13.5px;line-height:1.45;border-top:1px solid var(--line)}
-.tier.feat .pkg li{border-color:var(--lined);color:var(--paper)}
-.tier .pkg li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:8px;background:var(--accent)}
-.tier .pkg .note{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:14px;text-transform:uppercase;letter-spacing:.03em;line-height:1.5}
-.tier.feat .pkg .note{color:var(--mutedd)}
-.tier .btn{margin-top:auto;width:100%;text-align:center}
-.tier.feat .btn{background:var(--accent);border-color:var(--accent);color:var(--ink)}
-.tier.feat .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
-.guarantee{display:flex;gap:16px;align-items:center;border:1.5px solid var(--ink);padding:22px 26px;margin-top:24px}
-.guarantee b{color:var(--accent)}
-.guarantee p{font-family:var(--sans);font-size:15px;text-transform:none;letter-spacing:0}
-.guarantee .gi{font-family:var(--disp);font-weight:900;font-size:22px;color:var(--accent)}
-.cases{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink)}
-.ccard{padding:36px;border-left:1.5px solid var(--ink);color:var(--ink);transition:.16s;display:flex;flex-direction:column}
-.ccard:first-child{border-left:0}
-.ccard:hover{background:var(--ink);color:var(--paper)}
-.ccard .cb{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700}
-.ccard h3{font-size:clamp(26px,3.2vw,38px);margin:14px 0 14px}
-.ccard p{font-family:var(--sans);color:var(--muted);font-size:15px;line-height:1.5;text-transform:none;letter-spacing:0}
-.ccard:hover p{color:var(--mutedd)}
-.ccard .cstats{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap}
-.ccard .cstats div{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
-.ccard:hover .cstats div{color:var(--mutedd)}
-.ccard .cstats b{font-family:var(--disp);font-weight:900;font-size:22px;display:block;color:inherit;letter-spacing:-.01em;margin-bottom:5px}
-.ccard .clink{margin-top:auto;padding-top:26px;font-family:var(--mono);font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:.06em}
 .dark{background:var(--ink);color:var(--paper)}
-.dark .sec-head p,.dark .lead{color:var(--mutedd)}
-.founders{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.founder .photo{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1.5px solid var(--ink);filter:contrast(1.02)}
-.founder .fname{font-family:var(--disp);font-weight:900;font-size:clamp(28px,3.4vw,40px);margin-top:22px}
-.founder .frole{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:8px 0 12px;font-weight:700}
-.founder .fbio{font-family:var(--sans);color:var(--muted);font-size:15px;line-height:1.5;max-width:42ch}
-.ledger{border-top:1.5px solid var(--lined);border-bottom:1.5px solid var(--lined);padding:8px 0}
-.ledger-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.ledger-cell{padding:24px 24px 24px 0}
-.ledger-num{font-family:var(--disp);font-weight:900;font-size:clamp(40px,6vw,72px);line-height:.9;letter-spacing:-.03em}.ledger-num b{color:var(--accent);font-weight:900}
-.ledger-lbl{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mutedd);margin-top:14px}
-.final{text-align:center}
-.final .ix{display:block;margin-bottom:24px}
-.scarcity{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1.5px solid var(--accent);padding:8px 18px;margin-bottom:30px}
-.final h2{font-size:clamp(40px,7vw,96px);margin:0 auto 20px;max-width:18ch}
-.final p{font-family:var(--sans);color:var(--mutedd);max-width:50ch;margin:0 auto 36px;font-size:18px;text-transform:none;letter-spacing:0;line-height:1.5}
-form{max-width:600px}
-.field{margin-bottom:18px}
-.field label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);margin-bottom:8px;text-transform:uppercase}
-.field input,.field select,.field textarea{width:100%;background:var(--paper2);border:1.5px solid var(--ink);border-radius:0;color:var(--ink);font-family:var(--sans);font-size:15px;padding:13px 15px}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
-.field textarea{min-height:130px;resize:vertical}
+.dark .sec-head p{color:var(--mutedd)}
 footer{background:var(--ink);color:var(--paper);padding:48px 0 30px}
 .foot-word{font-family:var(--disp);font-weight:900;font-size:clamp(48px,13vw,150px);line-height:.85;letter-spacing:-.03em;text-transform:uppercase;border-bottom:1.5px solid var(--lined);padding-bottom:24px;margin-bottom:24px}
 .foot-word sup{color:var(--accent);font-size:.2em;vertical-align:super}
 .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mutedd)}
-.foot-links{display:flex;gap:24px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
 .foot-links a:hover{color:var(--accent)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.foot-links a.mid{color:var(--accent)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.mq-track{animation:none}}
+.words .wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.words .wdi{display:inline-block;transform:translateY(118%);transition:transform .75s cubic-bezier(.16,1,.3,1)}
+.words.wr-in .wdi{transform:none}
+.cur-dot,.cur-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;will-change:transform}
+.cur-dot{width:7px;height:7px;background:var(--accent);z-index:10001;transform:translate(-50%,-50%)}
+.cur-ring{width:38px;height:38px;border:1.5px solid var(--accent);z-index:10000;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
+.cur-ring.big{width:78px;height:78px;background:rgba(255,58,20,.12)}
+body.cursor-on{cursor:none}
+body.cursor-on a,body.cursor-on button,body.cursor-on .case-row,body.cursor-on .svc-top,body.cursor-on .lib-card{cursor:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.words .wdi{transform:none;transition:none}}
+
+.cs-hero{padding:64px 0 0;border-top:0;position:relative;overflow:hidden}
+.cs-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:40px}
+.cs-back:hover{color:var(--accent)}
+.cs-eyebrow{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:20px}
+.cs-eyebrow .dot{display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%;margin-right:10px;vertical-align:middle}
+.cs-h1{font-family:var(--disp);font-weight:900;font-size:clamp(38px,7vw,100px);line-height:.92;letter-spacing:-.025em;text-transform:uppercase;max-width:18ch}
+.cs-h1 em{color:var(--accent)}
+.cs-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.cs-meta .chip{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;border:1.5px solid var(--ink);padding:9px 16px;color:var(--ink)}
+.cs-meta .chip.acc{background:var(--accent);border-color:var(--accent)}
+.cs-heroimg{margin-top:56px;height:clamp(320px,56vw,640px);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);overflow:hidden;position:relative}
+.cs-heroimg{background:var(--ink)}
+.cs-heroimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.cs-lead{padding:96px 0;border-top:0}
+.cs-lead-grid{display:grid;grid-template-columns:300px 1fr;gap:60px}
+.cs-lead .lbl{font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);font-weight:700;position:sticky;top:100px;height:max-content}
+.cs-lead p{font-family:var(--sans);font-size:clamp(19px,2.3vw,26px);line-height:1.5;color:var(--ink);max-width:30ch;margin-bottom:0}
+.cs-lead p+p{margin-top:26px;font-size:18px;color:var(--muted);max-width:60ch}
+.cs-metrics{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.cs-metrics .grid-an{position:absolute;inset:-60px;background-image:linear-gradient(var(--lined) 1px,transparent 1px),linear-gradient(90deg,var(--lined) 1px,transparent 1px);background-size:60px 60px;opacity:.5;animation:gridpan2 30s linear infinite}
+@keyframes gridpan2{to{background-position:60px 60px,60px 60px}}
+.cs-metrics .wrap{position:relative;z-index:2}
+.cs-met-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5px;background:var(--lined);border:1.5px solid var(--lined)}
+.cs-met{background:var(--ink);padding:40px 26px}
+.cs-met .n{font-family:var(--disp);font-weight:900;font-size:clamp(40px,5.5vw,76px);line-height:.85;letter-spacing:-.03em}
+.cs-met .n .p{color:var(--accent)}
+.cs-met .l{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mutedd);margin-top:16px;line-height:1.4}
+.cs-sol .sec-head{margin-bottom:64px}
+.sol-step{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:60px 0;border-top:1.5px solid var(--line)}
+.sol-step:nth-child(even) .sol-txt{order:2}
+.sol-step:nth-child(even) .sol-media{order:1}
+.sol-num{font-family:var(--disp);font-weight:900;font-size:clamp(40px,5vw,70px);line-height:.85;color:transparent;-webkit-text-stroke:1.5px var(--accent);margin-bottom:22px}
+.sol-txt h3{font-size:clamp(24px,2.8vw,34px);margin-bottom:16px;line-height:1.02}
+.sol-txt p{font-family:var(--sans);color:var(--muted);font-size:17px;line-height:1.55;max-width:48ch}
+.sol-media{position:relative;border:1.5px solid var(--ink);overflow:hidden;background:var(--ink);aspect-ratio:4/3}
+.sol-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.001);transition:transform .9s cubic-bezier(.16,1,.3,1),filter .9s ease;filter:saturate(.96)}
+.sol-step:hover .sol-media img{transform:scale(1.045);filter:saturate(1.05)}
+.sol-media::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 0 var(--accent);transition:box-shadow .4s ease}
+.sol-step:hover .sol-media::after{box-shadow:inset 0 0 0 3px var(--accent)}
+.cs-gallery{padding:96px 0}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--ink);border:1.5px solid var(--ink)}
+.gal-grid a,.gal-grid div.gi{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--paper2)}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1);display:block}
+.gal-grid .gi:hover img{transform:scale(1.06)}
+.gal-wide{grid-column:span 2}
+.cs-quote{padding:110px 0;border-top:1.5px solid var(--ink)}
+.cs-quote p{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(28px,4.4vw,58px);line-height:1.04;letter-spacing:-.02em;max-width:24ch}
+.cs-quote em{color:var(--accent)}
+.cs-cta{background:var(--ink);color:var(--paper);text-align:center;padding:110px 0}
+.cs-cta h2{font-size:clamp(38px,6.5vw,86px);max-width:20ch;margin:0 auto 22px}
+.cs-cta p{font-family:var(--sans);color:var(--mutedd);max-width:46ch;margin:0 auto 34px;font-size:18px;text-transform:none;letter-spacing:0}
+.cs-nextcase{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:40px 0;border-top:1.5px solid var(--ink);flex-wrap:wrap}
+.cs-nextcase .nl{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.cs-nextcase a{font-family:var(--disp);font-weight:900;font-size:clamp(22px,3vw,38px);text-transform:uppercase;letter-spacing:-.01em}
+.cs-nextcase a:hover{color:var(--accent)}
+
 @media(max-width:880px){
  .nav-links{position:fixed;inset:68px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:1.5px solid var(--ink);padding:10px 32px 20px;display:none}
  .nav-links.open{display:flex}.nav-links .lk{padding:13px 0;width:100%}.nav-toggle{display:block}
- .stats-grid,.offer,.founders,.cases,.ledger-grid{grid-template-columns:1fr}
- .stat{border-left:0;padding-left:0;border-top:1.5px solid var(--ink);padding-top:24px;margin-top:8px}.stat:first-child{border-top:0}
- .tier{border-left:0;border-top:1.5px solid var(--ink)}.tier:first-child{border-top:0}
- .ccard{border-left:0;border-top:1.5px solid var(--ink)}.ccard:first-child{border-top:0}
+ .cs-lead-grid{grid-template-columns:1fr;gap:24px}.cs-lead .lbl{position:static}
+ .cs-met-grid{grid-template-columns:1fr 1fr}
+ .sol-step{grid-template-columns:1fr;gap:24px;padding:40px 0}
+ .sol-step:nth-child(even) .sol-txt,.sol-step:nth-child(even) .sol-media{order:0}
+ .gal-grid{grid-template-columns:1fr 1fr}.gal-wide{grid-column:span 2}
 }
-</style></head><body><nav><div class="wrap nav-in">
+
+.glos{border-bottom:1px dotted var(--accent);font-weight:600;white-space:nowrap}
+.glos:hover{color:var(--accent)}
+.cs-found{padding:0 0 96px}
+.found-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--ink);border:1.5px solid var(--ink)}
+.found-cell{background:var(--paper);padding:32px 28px}
+.found-cell .fk{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:13px;display:block}
+.found-cell .fn{font-family:var(--disp);font-weight:900;font-size:clamp(18px,2vw,24px);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:12px;line-height:1.04}
+.found-cell p{font-family:var(--sans);color:var(--muted);font-size:14.5px;line-height:1.6}
+.sol-lead{font-family:var(--sans);color:var(--muted);font-size:18px;line-height:1.6;max-width:62ch;margin:-40px 0 12px}
+@media(max-width:900px){.found-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.found-grid{grid-template-columns:1fr}}
+</style></head><body>
+<div class="progress"></div><nav><div class="wrap nav-in">
  <a href="index.html" class="logo">Wellmade<sup>&reg;</sup></a>
  <button class="nav-toggle" aria-label="Menu" id="tg">&#9776;</button>
  <div class="nav-links" id="menu">
-  <a class="lk" href="index.html#oferta">Oferta</a>
   <a class="lk" href="index.html#case">Realizacje</a>
-  <a class="lk" href="index.html#zalozyciele">Założyciele</a>
-  <a class="btn btn-accent" href="kontakt.html">Zbuduj markę</a>
+  <a class="lk" href="index.html#process">Jak działamy</a>
+  <a class="lk" href="index.html#oferta">Oferta</a>
+  <a class="lk" href="index.html#zalozyciele">O nas</a>
+  <a class="btn btn-accent mag" href="kontakt.html">Zbuduj markę</a>
  </div>
 </div></nav>
-<header class="hero"><div class="wrap">
- <span class="ix reveal" style="display:block;margin-bottom:20px">&#10042; Realizacja &mdash; case study</span>
- <h1 class="reveal" style="font-size:clamp(52px,12vw,150px)">Kanaste</h1>
- <p class="lead reveal" style="margin-top:28px">Jak w nieco ponad rok zbudowaliśmy markę premium, która stała się jednym z liderów kategorii CBD - w segmencie pełnym mitów i nieufności.</p>
-</div></header>
-
-<section><div class="wrap narrow">
- <div class="sec-head reveal"><span class="ix">(01) &mdash; Wyzwanie</span><h2>Kategoria pełna mitów</h2>
- <p>CBD to rynek, w którym konsument nie wie, czy produkt jest bezpieczny, legalny i skuteczny. Trzeba było jednocześnie edukować, budować zaufanie i nadać marce premium, lifestyle'owy charakter - tak, żeby niepewność zamienić w decyzję zakupową.</p></div>
+<header class="cs-hero"><div class="wrap">
+ <a class="cs-back" href="index.html#case">&larr; Wszystkie realizacje</a>
+ <div class="cs-eyebrow"><span class="dot"></span>Kanaste &mdash; Premium CBD &middot; Polska &middot; 2019</div>
+ <h1 class="cs-h1">Z 100 tys. do <em>13 mln zł</em> przychodu w 24 miesiące.</h1>
+ <div class="cs-meta"><span class="chip acc">Premium CBD</span><span class="chip">Subskrypcja & DTC</span><span class="chip">Program partnerski</span><span class="chip">Marketing automation</span></div>
+</div>
+ <div class="cs-heroimg"><img class="par" src="assets/kanaste-glowne.jpg" alt="Kanaste - olejek CBD premium"></div>
+</header>
+<section class="cs-lead"><div class="wrap"><div class="cs-lead-grid">
+ <div class="lbl">Wyzwanie</div>
+ <div><p>Polski rynek suplementów w 2019 roku. CBD wciąż w regulacyjnej szarej strefie, klienci nieufni, a konkurencja zalewała Allegro tanim importem.</p><p>Kapitał startowy: 100 000 zł. Budżet na pierwszy launch i kilka miesięcy ognia. Bez VC, bez retainera agencji, bez działu sprzedaży. Cała operacja musiała stanąć na automatyzacji - lata przed tym, zanim generatywne AI stało się narzędziem.</p></div>
+</div></div></section>
+<section class="cs-metrics"><div class="grid-an"></div><div class="wrap">
+ <div class="cs-met-grid"><div class="cs-met reveal"><div class="n"><span class="count" data-to="13">0</span> <span class="p">mln zł</span></div><div class="l">przychodu w 24 miesiące</div></div><div class="cs-met reveal"><div class="n"><span class="count" data-to="100000">0</span><span class="p">+</span></div><div class="l">odbiorców marki</div></div><div class="cs-met reveal"><div class="n"><span class="count" data-to="2000">0</span><span class="p">+</span></div><div class="l">opinii klientów</div></div><div class="cs-met reveal"><div class="n"><span class="count" data-to="100">0</span> <span class="p">tys.</span></div><div class="l">kapitału na starcie</div></div></div>
 </div></section>
-
-<section><div class="wrap narrow">
- <div class="sec-head reveal"><span class="ix">(02) &mdash; Co zbudowaliśmy</span><h2>Marka w duchu<br>modern wellness</h2></div>
- <details class="pkg acc reveal" style="border-top:1.5px solid var(--ink);margin:0"><summary style="font-size:14px;color:var(--ink)">Rebranding modern wellness</summary><ul style="list-style:none"><li style="border:0;padding-left:0;color:var(--muted)">Połączyliśmy jakość i transparentność z lekkim, lifestyle'owym językiem - marka, która łamie stereotypy o CBD i buduje zaufanie od pierwszego kontaktu.</li></ul></details>
- <details class="pkg acc reveal" style="border-top:1.5px solid var(--ink);margin:0"><summary style="font-size:14px;color:var(--ink)">Doświadczenie zakupowe DTC</summary><ul style="list-style:none"><li style="border:0;padding-left:0;color:var(--muted)">Sklep zaprojektowany pod konwersję, z interaktywnym doborem dawki i strefą edukacyjną, która rozwiewa wątpliwości i prowadzi klienta do zakupu.</li></ul></details>
- <details class="pkg acc reveal" style="border-top:1.5px solid var(--ink);margin:0"><summary style="font-size:14px;color:var(--ink)">Subskrypcja na pierwszym miejscu</summary><ul style="list-style:none"><li style="border:0;padding-left:0;color:var(--muted)">Model subskrypcyjny premiujący lojalność - wyższy retention, większy lifetime value i przewidywalny przychód.</li></ul></details>
- <details class="pkg acc reveal" style="border-top:1.5px solid var(--ink);margin:0"><summary style="font-size:14px;color:var(--ink)">Packaging z pomysłem</summary><ul style="list-style:none"><li style="border:0;padding-left:0;color:var(--muted)">Opakowanie zbudowane wokół idei &bdquo;słońca zamkniętego w buteleczce&rdquo; - komunikuje naturalne pochodzenie i jakość już na pierwszy rzut oka.</li></ul></details>
- <details class="pkg acc reveal" style="border-top:1.5px solid var(--ink);margin:0"><summary style="font-size:14px;color:var(--ink)">Influencer i community</summary><ul style="list-style:none"><li style="border:0;padding-left:0;color:var(--muted)">Strategia social proof oparta na realnych historiach klientów, ponad 1000 opinii o produkcie i współprace z wiarygodnymi twórcami.</li></ul></details>
- <details class="pkg acc reveal" style="border-top:1.5px solid var(--ink);margin:0"><summary style="font-size:14px;color:var(--ink)">Content i edukacja</summary><ul style="list-style:none"><li style="border:0;padding-left:0;color:var(--muted)">Treści tworzone przez ekspertów - merytoryczne, oparte na nauce, a przy tym przystępne i sprzedające.</li></ul></details>
- <details class="pkg acc reveal" style="border-top:1.5px solid var(--ink);margin:0"><summary style="font-size:14px;color:var(--ink)">Marketing automation</summary><ul style="list-style:none"><li style="border:0;padding-left:0;color:var(--muted)">Wielokanałowy system e-mail, SMS i web push prowadzący klienta od pierwszego kontaktu, przez onboarding, po programy lojalnościowe.</li></ul></details>
+<section class="cs-sol"><div class="wrap">
+ <div class="sec-head reveal"><span class="ix">Od zera</span><h2>Najpierw produkt,<br>nie kampania</h2></div>
+ <p class="sol-lead reveal">Rdzeń to olejki <a class="glos" href="biblioteka.html#cbd">CBD</a> z ekstraktu z polskich konopi, w kilku stężeniach (600 / 1200 / 2400 mg) i kilku smakach. Wokół nich zbudowaliśmy linię napojów funkcjonalnych — wszystkie na customowych formułach: <strong>Better Focus</strong> z grzybów adaptogennych na skupienie, <strong>Better Sleep</strong> na lepszy sen i <strong>Better Hydration</strong> na nawodnienie. Klient ma powód wracać po więcej niż jeden produkt.</p>
+ <div class="sol-step reveal"><div class="sol-txt"><div class="sol-num">01</div><h3>Innowacyjne produkty</h3><p>Portfolio wychodzące poza pojedynczy olejek: różne pory dnia, różne potrzeby, jedna marka. Olejki w trzech mocach plus rozpuszczalne napoje funkcjonalne — szersza oferta podnosi średni koszyk i ułatwia przejście na subskrypcję.</p></div>
+        <div class="sol-media" style="aspect-ratio:2/3"><img class="par" src="assets/kanaste-produkty-1.jpg" alt="Linia produktow Kanaste - better focus, hydration, sleep" loading="lazy"></div></div>
+ <div class="sol-step reveal"><div class="sol-txt"><div class="sol-num">02</div><h3>Zestaw Odkrywcy i Smakosza</h3><p>Żeby podnieść wartość koszyka i zdjąć ryzyko pierwszego zakupu w nieznanej kategorii, wprowadziliśmy zestawy próbne (6×1 ml). To klasyczny <a class="glos" href="biblioteka.html#upsell">upsell</a> i jednocześnie <a class="glos" href="biblioteka.html#sampling">sampling</a> — klient bez ryzyka testuje smaki i stężenia, a marka zyskuje wyższy średni koszyk i prostszą ścieżkę do subskrypcji.</p></div>
+        <div class="sol-media" style="aspect-ratio:1600/895"><img class="par" src="assets/kanaste-zestaw-odkrywcy.jpg" alt="Zestaw Odkrywcy Kanaste" loading="lazy"></div></div>
 </div></section>
-
-<section class="dark"><div class="wrap">
- <div class="sec-head reveal"><span class="ix">(03) &mdash; Efekt</span><h2>Lider kategorii<br>w nieco ponad rok</h2></div>
- <div class="ledger reveal"><div class="ledger-grid">
-   <div class="ledger-cell"><div class="ledger-num"><b>100 000+</b></div><div class="ledger-lbl">odbiorców marki</div></div>
-   <div class="ledger-cell"><div class="ledger-num"><b>1 000+</b></div><div class="ledger-lbl">opinii klientów</div></div>
-   <div class="ledger-cell"><div class="ledger-num"><b>~rok</b></div><div class="ledger-lbl">do pozycji lidera CBD</div></div>
- </div></div>
- <p class="reveal" style="color:var(--mutedd);max-width:60ch;margin-top:30px;font-size:17px">Kanaste i SOMA to razem 25 mln+ zł przychodu i 200 000+ sprzedanych produktów. Ten sam proces stosujemy do każdej marki, którą bierzemy.</p>
+<section class="cs-found"><div class="wrap">
+ <div class="sec-head reveal"><span class="ix">Fundamenty</span><h2>Marka zbudowana<br>kompleksowo</h2></div>
+ <div class="found-grid reveal">
+  <div class="found-cell"><span class="fk">Formuła</span><div class="fn">Wszystko na customowych formułach</div><p>Żadnego gotowca z katalogu producenta — każdy produkt to autorska formuła zaprojektowana od podstaw. Olejki CBD w trzech stężeniach plus napoje funkcjonalne: <strong>Better Focus</strong> z grzybów adaptogennych na skupienie, <strong>Better Sleep</strong> na lepszy sen i <strong>Better Hydration</strong> na nawodnienie. Każda partia trzykrotnie testowana laboratoryjnie.</p></div>
+  <div class="found-cell"><span class="fk">Smak</span><div class="fn">Wyróżnik kategorii</div><p>Olejki CBD bywają gorzkie — to powód rezygnacji. Postawiliśmy na smak: pomarańczowy (bestseller), miętowo-czekoladowy, waniliowy, limonkowy. Smak napędza <a class="glos" href="biblioteka.html#retencja">retencję</a> i codzienne użycie.</p></div>
+  <div class="found-cell"><span class="fk">Packaging</span><div class="fn">Słońce w buteleczce</div><p>Opakowanie zbudowane wokół idei „słońca zamkniętego w buteleczce”. Ciepła barwa szkła oddaje naturalne pochodzenie CBD, jasne oznaczenia dawkowania budują poczucie bezpieczeństwa.</p></div>
+  <div class="found-cell"><span class="fk">Ceny</span><div class="fn">Premium, nie wojna cenowa</div><p>Pozycjonowanie wartością, nie ceną. Wybór stężenia i smaku pozwala dopasować produkt do siebie, a najniższa cena za porcję czeka w <a class="glos" href="biblioteka.html#subskrypcja">subskrypcji</a>.</p></div>
+  <div class="found-cell"><span class="fk">Obsługa klienta</span><div class="fn">Prowadzenie za rękę</div><p>Interaktywna ankieta dobierająca stężenie i dawkę, rozbudowana strefa edukacyjna i szybkie, merytoryczne wsparcie. Klient, który nie zna CBD, dostaje prowadzenie od pierwszej wizyty po decyzję.</p></div>
+  <div class="found-cell"><span class="fk">Logistyka</span><div class="fn">Własny magazyn → 3PL</div><p>Na starcie własny magazyn i pełna kontrola nad procesami. Wraz ze skalą przenieśliśmy fulfillment do operatora <a class="glos" href="biblioteka.html#3pl">3PL</a> z <a class="glos" href="biblioteka.html#cutoff">cutoffem do 20:00</a> — zamówienia złożone do 20:00 wychodzą tego samego dnia.</p></div>
+ </div>
 </div></section>
-
-<section class="dark final" style="border-top:1.5px solid var(--lined)"><div class="wrap">
- <h2 class="reveal">Twoja marka<br>może być <em>następna.</em></h2>
- <p class="reveal">Porozmawiajmy o tym, co zbudujemy dla Ciebie.</p>
- <a class="btn btn-accent reveal" href="kontakt.html">Zbuduj moją markę</a>
+<section class="cs-sol"><div class="wrap">
+ <div class="sec-head reveal"><span class="ix">Wzrost</span><h2>Jak skalowaliśmy<br>do lidera kategorii</h2></div>
+ <div class="sol-step reveal"><div class="sol-txt"><div class="sol-num">01</div><h3>Subskrypcja od pierwszego dnia</h3><p>Jedna z pierwszych polskich marek suplementów na auto-uzupełnieniu. Klient kupuje raz i zostaje na miesiące — bez ręcznego fakturowania, z przewidywalnym <a class="glos" href="biblioteka.html#mrr">MRR</a> i wyższym <a class="glos" href="biblioteka.html#retencja">retention</a>.</p></div>
+        <div class="sol-media" style="aspect-ratio:1500/816"><img class="par" src="assets/kanaste-subskrypcja.jpg" alt="" loading="lazy"></div></div><div class="sol-step reveal"><div class="sol-txt"><div class="sol-num">02</div><h3>Program partnerski i gwiazdy</h3><p>Tysiące twórców w sieci wokół marki — każdy z własnym kodem, prowizją i dashboardem, napędzany automatyzacją, nie zespołem obdzwaniającym blogerów. Z Kanaste współpracowały też największe gwiazdy mediów i telewizji, co dało zasięg i wiarygodność nieosiągalne samą reklamą performance. Do tego <a class="glos" href="biblioteka.html#social-proof">social proof</a> oparty na realnych historiach i <a class="glos" href="biblioteka.html#ugc">UGC</a>.</p></div>
+        <div class="sol-media" style="aspect-ratio:1600/1908"><img class="par" src="assets/kanaste-program-partnerski.jpg" alt="Program partnerski i gwiazdy Kanaste" loading="lazy"></div></div><div class="sol-step reveal"><div class="sol-txt"><div class="sol-num">03</div><h3>W pełni zautomatyzowany e-mail marketing</h3><p>Powitanie, edukacja, post-zakup, <a class="glos" href="biblioteka.html#win-back">win-back</a>, kampanie sezonowe. Wielokanałowy <a class="glos" href="biblioteka.html#marketing-automation">marketing automation</a> — każdy lead trafia do właściwej sekwencji bez ręcznej segmentacji.</p></div>
+        <div class="sol-media" style="aspect-ratio:1192/1300"><img class="par" src="assets/kanaste-email.jpg" alt="" loading="lazy"></div></div><div class="sol-step reveal"><div class="sol-txt"><div class="sol-num">04</div><h3>Modern-wellness branding premium</h3><p>Rebranding, sklep DTC i packaging „słońce w buteleczce”, który niepewność wokół CBD zamienił w zaufanie — w duchu <a class="glos" href="biblioteka.html#modern-wellness">modern wellness</a>. 100 000+ odbiorców i 2 000+ opinii.</p></div>
+        <div class="sol-media" style="aspect-ratio:1/1"><img class="par" src="assets/kanaste-branding.jpg" alt="" loading="lazy"></div></div>
+</div></section>
+<section class="cs-quote"><div class="wrap">
+ <p class="words">100 000 zł zamienione w <em>13 milionów</em> przychodu. Sfinansowane własną marżą.</p>
+</div></section>
+<section class="cs-cta"><div class="wrap">
+ <h2 class="words">Chcesz <em>powtórzyć</em> ten wynik?</h2>
+ <p class="reveal">Mamy gotowy playbook. Jedna rozmowa wystarczy, żeby sprawdzić, czy Twoja marka się nadaje.</p>
+ <a class="btn btn-accent mag reveal" href="kontakt.html">Zbuduj moją markę</a>
+ <div class="cs-nextcase"><span class="nl">Następna realizacja</span><a href="realizacje.html">SOMA Health Co. &#8599;</a></div>
 </div></section>
 <footer><div class="wrap">
  <div class="foot-word">Wellmade<sup>&reg;</sup></div>
  <div class="foot-in"><span>&copy; 2026 Wellmade &mdash; studio marek suplementowych</span>
- <span class="foot-links"><a href="faq.html">FAQ</a><a href="blog.html">Blog</a><a href="kontakt.html">Kontakt</a></span></div>
+ <span class="foot-links"><a href="faq.html">FAQ</a><a href="biblioteka.html">Biblioteka</a><a href="kontakt.html">Kontakt</a><a class="mid" href="https://midasforscale.com/" target="_blank" rel="noopener">Midas AI &#8599;</a></span></div>
 </div></footer><script>
-(function(){var tg=document.getElementById('tg'),menu=document.getElementById('menu');
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var fine=matchMedia('(pointer:fine)').matches;
+var tg=document.getElementById('tg'),menu=document.getElementById('menu');
 if(tg){tg.addEventListener('click',function(){menu.classList.toggle('open')});
 menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});}
+function load(){document.body.classList.add('loaded')}
+if(document.readyState==='complete')load();else window.addEventListener('load',load);
+setTimeout(load,700);
+function fmt(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'\u00A0')}
+function countUp(el){var to=parseFloat(el.getAttribute('data-to')),dur=1500,st=null;if(reduce){el.textContent=fmt(to);return}
+ function s(ts){if(!st)st=ts;var p=Math.min((ts-st)/dur,1),e=1-Math.pow(1-p,3);el.textContent=fmt(to*e);if(p<1)requestAnimationFrame(s)}requestAnimationFrame(s)}
 var els=document.querySelectorAll('.reveal');
-if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
-var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
-els.forEach(function(e){io.observe(e)});})();
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});document.querySelectorAll('.count').forEach(countUp);}
+else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');if(x.target.querySelector&&x.target.querySelector('.count')){x.target.querySelectorAll('.count').forEach(countUp)}io.unobserve(x.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)});}
+function splitWords(el){var idx=0;function proc(n,t){Array.prototype.slice.call(n.childNodes).forEach(function(c){
+ if(c.nodeType===3){c.nodeValue.split(/(\s+)/).forEach(function(tok){if(tok==='')return;if(/^\s+$/.test(tok)){t.appendChild(document.createTextNode(tok))}else{var w=document.createElement('span');w.className='wd';var i=document.createElement('span');i.className='wdi';i.textContent=tok;i.style.transitionDelay=(idx*0.045)+'s';idx++;w.appendChild(i);t.appendChild(w)}});}
+ else if(c.nodeType===1){if(c.tagName==='BR'){t.appendChild(document.createElement('br'))}else{var cl=document.createElement(c.tagName);if(c.className)cl.className=c.className;proc(c,cl);t.appendChild(cl)}}});}
+ var f=document.createElement('span');proc(el,f);el.innerHTML='';while(f.firstChild)el.appendChild(f.firstChild);}
+var we=document.querySelectorAll('.words');
+we.forEach(function(el){if(reduce){el.classList.add('wr-in')}else{splitWords(el)}});
+if(!reduce&&'IntersectionObserver' in window){var wio=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('wr-in');wio.unobserve(x.target)}})},{threshold:.2});we.forEach(function(el){wio.observe(el)});}else{we.forEach(function(el){el.classList.add('wr-in')})}
+document.querySelectorAll('.svc-top').forEach(function(b){b.addEventListener('click',function(){var s=b.parentElement;var op=s.classList.toggle('open');b.setAttribute('aria-expanded',op?'true':'false')})});
+var bar=document.querySelector('.progress');
+var heroWrap=document.querySelector('.hero .wrap'),heroBg=document.querySelector('.hero-bg');
+var pars=Array.prototype.slice.call(document.querySelectorAll('.par')).filter(function(im){return !im.closest('.cs-heroimg')&&!im.closest('.sol-media')});
+var ticking=false;
+function onScroll(){var h=document.documentElement,vh=window.innerHeight,y=h.scrollTop||window.pageYOffset||0;
+ if(bar)bar.style.transform='scaleX('+(y/((h.scrollHeight-h.clientHeight)||1))+')';
+ if(!reduce){var hy=Math.min(y,vh);
+  if(heroWrap){heroWrap.style.transform='translateY('+(hy*0.2)+'px)';heroWrap.style.opacity=String(Math.max(1-y/(vh*0.9),0))}
+  if(heroBg){heroBg.style.transform='translateY('+(hy*0.4)+'px)'}
+  pars.forEach(function(im){var ph=im.parentElement,r=ph.getBoundingClientRect();if(r.bottom<-50||r.top>vh+50)return;var off=(r.top+r.height/2)-vh/2,max=ph.clientHeight*0.12,ty=Math.max(Math.min(-off*0.07,max),-max);im.style.transform='translateY(calc(-50% + '+ty+'px))'});
+ }
+ ticking=false;}
+addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+addEventListener('resize',onScroll);onScroll();
+if(fine&&!reduce){document.body.classList.add('cursor-on');
+ var dot=document.createElement('div');dot.className='cur-dot';var ring=document.createElement('div');ring.className='cur-ring';
+ document.body.appendChild(dot);document.body.appendChild(ring);var mx=0,my=0,rx=0,ry=0;
+ addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.transform='translate('+mx+'px,'+my+'px) translate(-50%,-50%)'});
+ (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;ring.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';requestAnimationFrame(loop)})();
+ document.querySelectorAll('a,button,.case-row,.svc-top,.lib-card').forEach(function(el){el.addEventListener('mouseenter',function(){ring.classList.add('big')});el.addEventListener('mouseleave',function(){ring.classList.remove('big')})});
+ document.querySelectorAll('.mag').forEach(function(b){b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);b.style.transform='translate('+dx*.25+'px,'+dy*.25+'px)'});b.addEventListener('mouseleave',function(){b.style.transform=''})});
+}
+})();
 </script></body></html>
