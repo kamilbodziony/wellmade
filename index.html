@@ -34,7 +34,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(231,227,216,.86);backdrop-f
 .nav-links .lk::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s cubic-bezier(.16,1,.3,1)}
 .nav-links .lk:hover::after{transform:scaleX(1)}
 .nav-toggle{display:none;background:none;border:0;color:var(--ink);font-size:24px;cursor:pointer}
-section{padding:104px 0;border-top:1.5px solid var(--ink)}
+section{padding:72px 0;border-top:1.5px solid var(--ink)}
 .sec-head{max-width:60ch;margin-bottom:52px}
 .sec-head .ix{display:block;margin-bottom:18px}
 .sec-head h2{font-size:clamp(34px,5.5vw,72px)}
@@ -42,7 +42,7 @@ section{padding:104px 0;border-top:1.5px solid var(--ink)}
 .dark{background:var(--ink);color:var(--paper)}
 .dark .sec-head p{color:var(--mutedd)}
 footer{background:var(--ink);color:var(--paper);padding:48px 0 30px}
-.foot-word{font-family:var(--disp);font-weight:900;font-size:clamp(48px,13vw,150px);line-height:.85;letter-spacing:-.03em;text-transform:uppercase;border-bottom:1.5px solid var(--lined);padding-bottom:24px;margin-bottom:24px}
+.foot-word{font-family:var(--disp);font-weight:900;font-size:clamp(38px,9.5vw,108px);line-height:.85;letter-spacing:-.03em;text-transform:uppercase;border-bottom:1.5px solid var(--lined);padding-bottom:24px;margin-bottom:24px}
 .foot-word sup{color:var(--accent);font-size:.2em;vertical-align:super}
 .foot-in{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mutedd)}
 .foot-links{display:flex;gap:22px;flex-wrap:wrap}
@@ -71,7 +71,7 @@ body.cursor-on a,body.cursor-on button,body.cursor-on .case-row,body.cursor-on .
 @keyframes glowmove{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-7%,9%) scale(1.1)}}
 .hero .tags{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px;align-items:center;opacity:0;transform:translateY(16px);transition:opacity .8s ease .15s,transform .8s ease .15s}
 .hero .tags .sep{color:var(--accent)}
-.hero h1{font-size:clamp(44px,10.5vw,148px);font-weight:900}
+.hero h1{font-size:clamp(38px,8vw,112px);font-weight:900}
 .hero h1 .line{display:block;overflow:hidden;padding:.02em 0}
 .hero h1 .line>span{display:block;transform:translateY(112%);transition:transform 1s cubic-bezier(.16,1,.3,1)}
 .hero h1 .line:nth-child(1)>span{transition-delay:.05s}.hero h1 .line:nth-child(2)>span{transition-delay:.16s}.hero h1 .line:nth-child(3)>span{transition-delay:.27s}
@@ -80,17 +80,12 @@ body.cursor-on a,body.cursor-on button,body.cursor-on .case-row,body.cursor-on .
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 body.loaded .hero .tags,body.loaded .hero-foot{opacity:1;transform:none}
 body.loaded .hero h1 .line>span{transform:none}
-.marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:20px 0;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink)}
-.mq-track{display:flex;white-space:nowrap;width:max-content;animation:mq 34s linear infinite}
-.mq-track span{font-family:var(--disp);font-weight:800;font-size:clamp(28px,4.4vw,56px);text-transform:uppercase;letter-spacing:-.01em;padding:0 .35em}
-.mq-track .st{color:var(--accent)}
-@keyframes mq{to{transform:translateX(-50%)}}
 .manifesto .stmt{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(28px,4.6vw,62px);line-height:1.02;letter-spacing:-.02em;max-width:22ch}
 .manifesto .stmt em{color:var(--accent)}
 .manifesto .sub{font-family:var(--sans);color:var(--muted);font-size:18px;max-width:62ch;margin-top:26px;line-height:1.55}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.stat{padding:8px 28px 8px 0;border-left:1.5px solid var(--ink);padding-left:28px}
-.stat:first-child{border-left:0;padding-left:0}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.stat{padding:8px 20px;border-left:1.5px solid var(--ink)}
+.stat:first-child{border-left:0}
 .stat .num{font-family:var(--disp);font-weight:900;font-size:clamp(46px,8vw,108px);line-height:.9;letter-spacing:-.03em}
 .stat .num .p{color:var(--accent)}
 .stat .lbl{font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-top:16px}
@@ -109,9 +104,9 @@ body.loaded .hero h1 .line>span{transform:none}
 .case-row:hover .cr-stats div{color:var(--mutedd)}
 .cr-media{position:relative;height:250px;border:1.5px solid var(--ink);overflow:hidden;transition:border-color .35s}
 .case-row:hover .cr-media{border-color:var(--paper)}
-.cr-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:900;font-size:54px;color:var(--accent);transition:opacity .4s}
-.cr-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.07);transition:opacity .5s,transform .65s cubic-bezier(.16,1,.3,1)}
-.case-row:hover .cr-media img{opacity:1;transform:scale(1)}
+.cr-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:900;font-size:54px;color:var(--accent);transition:opacity .4s;opacity:0}
+.cr-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transform:scale(1.001);transition:transform .65s cubic-bezier(.16,1,.3,1)}
+.case-row:hover .cr-media img{transform:scale(1.05)}
 .case-row:hover .cr-ph{opacity:0}
 /* process */
 #process{border-top:1.5px solid var(--ink)}
@@ -122,8 +117,10 @@ body.loaded .hero h1 .line>span{transform:none}
 .step h3{font-size:clamp(22px,2.4vw,28px);margin-bottom:10px}
 .step p{font-family:var(--sans);color:var(--muted);text-transform:none;letter-spacing:0;font-size:16px;line-height:1.55;max-width:62ch}
 /* services */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--ink);border:1.5px solid var(--ink)}
-.svc{background:var(--paper);display:flex;flex-direction:column;transition:background .18s}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--paper);border:1.5px solid var(--ink)}
+.svc{background:var(--paper);display:flex;flex-direction:column;transition:background .18s;border-top:1.5px solid var(--ink);border-left:1.5px solid var(--ink)}
+.svc:nth-child(3n+1){border-left:0}
+.svc:nth-child(-n+3){border-top:0}
 .svc.open,.svc:hover{background:var(--paper2)}
 .svc-top{display:flex;gap:14px;align-items:center;width:100%;padding:20px 22px;background:none;border:0;text-align:left;font:inherit;color:inherit;cursor:pointer}
 .svc-top .si{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700;flex-shrink:0}
@@ -154,6 +151,12 @@ body.loaded .hero h1 .line>span{transform:none}
  .nav-links.open{display:flex}.nav-links .lk{padding:13px 0;width:100%}.nav-toggle{display:block}
  .stats-grid,.founders{grid-template-columns:1fr}
  .svc-grid{grid-template-columns:1fr 1fr}
+ .svc-desk{display:none}
+ .svc{border-left:1.5px solid var(--ink);border-top:1.5px solid var(--ink)}
+ .svc:nth-child(3n+1){border-left:1.5px solid var(--ink)}
+ .svc:nth-child(-n+3){border-top:1.5px solid var(--ink)}
+ .svc:nth-child(2n+1){border-left:0}
+ .svc:nth-child(-n+2){border-top:0}
  .stat{border-left:0;padding-left:0;border-top:1.5px solid var(--ink);padding-top:24px;margin-top:8px}.stat:first-child{border-top:0}
  .process .step{grid-template-columns:1fr;gap:12px}
  .case-row{grid-template-columns:1fr;gap:22px;padding:34px 0}.case-row:hover{padding-left:0;background:transparent;color:inherit}
@@ -181,25 +184,24 @@ body.loaded .hero h1 .line>span{transform:none}
  <div class="hero-bg"><div class="hgrid"></div><div class="hglow"></div></div>
  <div class="wrap">
  <div class="tags"><span class="tag">Supplement Brand Studio</span><span class="sep">&#9670;</span><span class="tag">Napędzane AI</span></div>
- <h1><span class="line"><span>Zbudujemy markę,</span></span><span class="line"><span>która <em>zarabia.</em></span></span><span class="line"><span>Bez Twojego czasu.</span></span></h1>
+ <h1><span class="line"><span>Zbudujemy Ci markę,</span></span><span class="line"><span>która <em>zarabia.</em></span></span><span class="line"><span>Ty masz wizję.</span></span></h1>
  <div class="hero-foot">
-  <p class="lead">Bierzemy na siebie wszystko, co trudne - formułę, produkcję, prawo, sklep, logistykę i sprzedaż - i oddajemy Ci gotową, rentowną markę napędzaną automatyzacją w 6-10 tygodni.</p>
+  <p class="lead">Bierzemy na siebie wszystko, co trudne - formułę, produkcję, prawo, sklep, logistykę i sprzedaż - i oddajemy Ci gotową, rentowną markę napędzaną automatyzacją. Ty skupiasz się na wizji i pasji, my zajmujemy się resztą.</p>
   <div class="hero-cta"><a class="btn btn-accent mag" href="kontakt.html">Zbuduj moją markę</a></div>
  </div>
  </div>
 </header>
-<div class="marquee"><div class="mq-track"><span>Made to sell.</span><span class="st">&#9670;</span><span>Made to scale.</span><span class="st">&#9670;</span><span>Made to last.</span><span class="st">&#9670;</span><span>Well made.</span><span class="st">&#9670;</span><span>Made to sell.</span><span class="st">&#9670;</span><span>Made to scale.</span><span class="st">&#9670;</span><span>Made to last.</span><span class="st">&#9670;</span><span>Well made.</span><span class="st">&#9670;</span><span>Made to sell.</span><span class="st">&#9670;</span><span>Made to scale.</span><span class="st">&#9670;</span><span>Made to last.</span><span class="st">&#9670;</span><span>Well made.</span><span class="st">&#9670;</span><span>Made to sell.</span><span class="st">&#9670;</span><span>Made to scale.</span><span class="st">&#9670;</span><span>Made to last.</span><span class="st">&#9670;</span><span>Well made.</span><span class="st">&#9670;</span></div></div>
-<section class="manifesto"><div class="wrap">
- <span class="ix reveal" style="display:block;margin-bottom:22px">(00) &mdash; Dlaczego my</span>
- <p class="stmt words">Robimy suplementy. Jedna kategoria. <em>Opanowana do perfekcji.</em></p>
- <p class="sub reveal">Wchodzimy z gotowym playbook'iem, który przetestowaliśmy na własnych markach i własnych pieniądzach. Napędzane AI, autonomiczne, skalowalne.</p>
-</div></section>
 <section class="stats"><div class="wrap">
  <div class="stats-grid reveal">
   <div class="stat"><div class="num"><span class="count" data-to="25">0</span> mln<span class="p">+</span></div><div class="lbl">wygenerowanego przychodu</div></div>
   <div class="stat"><div class="num"><span class="count" data-to="200000">0</span><span class="p">+</span></div><div class="lbl">sprzedanych produktów</div></div>
   <div class="stat"><div class="num"><span class="count" data-to="7">0</span> <span class="p">lat</span></div><div class="lbl">doświadczenia w suplementach</div></div>
  </div>
+</div></section>
+<section class="manifesto"><div class="wrap">
+ <span class="ix reveal" style="display:block;margin-bottom:22px">(00) &mdash; Dlaczego my</span>
+ <p class="stmt words">Robimy suplementy. Jedna kategoria. <em>Opanowana do perfekcji.</em></p>
+ <p class="sub reveal">Przeszliśmy tę drogę na własnych markach i własnych pieniądzach. Znamy każdą pułapkę, każdy ślepy zaułek i każdy błąd, który kosztuje lata pracy i setki tysięcy złotych. Wchodzimy z gotowym playbook'iem, żebyś nie zmarnował ich, robiąc to, co i tak nie działa.</p>
 </div></section>
 <section id="case"><div class="wrap">
  <div class="sec-head reveal"><span class="ix">(01) &mdash; Realizacje</span><h2>Marki, które<br>zbudowaliśmy</h2></div>
@@ -218,16 +220,16 @@ body.loaded .hero h1 .line>span{transform:none}
   </a>
  </div>
 </div></section>
-<section id="process"><div class="wrap">
- <div class="sec-head reveal"><span class="ix">(02) &mdash; Jak działamy</span><h2>Od pierwszej rozmowy<br>po gotową markę</h2>
- <p>Jeden proces, jeden zespół, jedna odpowiedzialność. Bez chaosu i bez przerzucania się między dostawcami.</p></div>
- <div class="process"><div class="step reveal" style="transition-delay:0.00s"><div class="sn">01</div><div><h3>Rozmowa</h3><p>Bezpłatna konsultacja. Poznajemy Ciebie, produkt i rynek. Mówimy wprost, czy projekt ma sens i czy się nadajesz.</p></div></div><div class="step reveal" style="transition-delay:0.06s"><div class="sn">02</div><div><h3>Strategia i propozycja</h3><p>Konkretny zakres, harmonogram i stała wycena. Zero ukrytych kosztów, zero rozliczeń godzinowych - wiesz dokładnie, co dostajesz.</p></div></div><div class="step reveal" style="transition-delay:0.12s"><div class="sn">03</div><div><h3>Budowa</h3><p>Składamy markę: formuła, branding, sklep, compliance, logistyka. Dostajesz regularne aktualizacje i działający produkt, nie prezentację.</p></div></div><div class="step reveal" style="transition-delay:0.18s"><div class="sn">04</div><div><h3>Launch i rozkręcenie</h3><p>Odpalamy sprzedaż i pierwsze kampanie. Wspieramy markę w pierwszych tygodniach na rynku.</p></div></div><div class="step reveal" style="transition-delay:0.24s"><div class="sn">05</div><div><h3>Przekazanie</h3><p>Oddajemy gotowy, działający biznes wraz z dokumentacją - tak, żebyś mógł prowadzić go samodzielnie.</p></div></div></div>
-</div></section>
 <section id="oferta"><div class="wrap">
- <div class="sec-head reveal"><span class="ix">(03) &mdash; Oferta</span><h2>Co bierzemy<br>na siebie</h2>
+ <div class="sec-head reveal"><span class="ix">(02) &mdash; Oferta</span><h2>Co bierzemy<br>na siebie</h2>
  <p>Pełen zakres budowy marki suplementowej - od strategii i formuły po sklep, logistykę i launch. Kliknij, żeby rozwinąć.</p></div>
- <div class="svc-grid"><div class="svc reveal" style="transition-delay:0.000s"><button class="svc-top" aria-expanded="false"><span class="si">01</span><b>Strategia i model marży</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Zaczynamy od liczb, nie od logo. Dobieramy niszę, hero-produkt i model cenowy tak, żeby marka zarabiała od pierwszej sprzedaży, a marża broniła się przy skali.</p></div></div><div class="svc reveal" style="transition-delay:0.030s"><button class="svc-top" aria-expanded="false"><span class="si">02</span><b>Formuła i dobór produktu</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Projektujemy formułę w dawkach klinicznych i format, który wyróżnia się na półce. Wybieramy produkt z sensem biznesowym i powtarzalnością zakupu, nie tylko ładną etykietę.</p></div></div><div class="svc reveal" style="transition-delay:0.060s"><button class="svc-top" aria-expanded="false"><span class="si">03</span><b>Produkcja i kontrola jakości</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Produkcja wyłącznie w zakładach spełniających normy GMP i HACCP. Kontrolujemy każdą partię, żeby jakość była powtarzalna, a nie loteryjna.</p></div></div><div class="svc reveal" style="transition-delay:0.090s"><button class="svc-top" aria-expanded="false"><span class="si">04</span><b>Badania laboratoryjne</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Każdą partię badamy tylko w sprawdzonych, niezależnych ośrodkach. Certyfikat jakości to twardy argument sprzedażowy i ochrona przed reklamacjami.</p></div></div><div class="svc reveal" style="transition-delay:0.120s"><button class="svc-top" aria-expanded="false"><span class="si">05</span><b>Compliance i prawo (GIS)</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Powiadomienie GIS, zgodna etykieta i wyłącznie dozwolone claimy. Marka startuje legalnie - bez kar, wycofanych partii i blokad reklam.</p></div></div><div class="svc reveal" style="transition-delay:0.150s"><button class="svc-top" aria-expanded="false"><span class="si">06</span><b>Branding i packaging</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Nazwa, identyfikacja i opakowanie gotowe na półkę i pod kamerę. Branding, który komunikuje premium i sprzedaje, zanim klient przeczyta skład.</p></div></div><div class="svc reveal" style="transition-delay:0.180s"><button class="svc-top" aria-expanded="false"><span class="si">07</span><b>Sesja zdjęciowa i kreacje</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Packshoty, lifestyle i gotowe kreacje reklamowe. Materiał, który od pierwszego dnia napędza sklep, social media i kampanie.</p></div></div><div class="svc reveal" style="transition-delay:0.210s"><button class="svc-top" aria-expanded="false"><span class="si">08</span><b>Sklep Shopify i CRO</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Sklep pisany pod konwersję, nie pod ładny wygląd. Karta produktu, porównania i ścieżka zakupowa zoptymalizowane tak, żeby ruch zamieniał się w sprzedaż.</p></div></div><div class="svc reveal" style="transition-delay:0.240s"><button class="svc-top" aria-expanded="false"><span class="si">09</span><b>Subskrypcja i retencja</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Model subskrypcyjny i automatyczne flow e-mail/SMS - powitanie, koszyk, post-zakup, win-back - które same wracają po klienta i podbijają lifetime value.</p></div></div><div class="svc reveal" style="transition-delay:0.270s"><button class="svc-top" aria-expanded="false"><span class="si">10</span><b>Logistyka i fulfillment</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Magazyn, wysyłki i zwroty spięte automatycznie ze sklepem. Skala nie oznacza chaosu, a Ty nie pakujesz paczek ręcznie.</p></div></div><div class="svc reveal" style="transition-delay:0.300s"><button class="svc-top" aria-expanded="false"><span class="si">11</span><b>Launch i kampanie reklamowe</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Plan wejścia na rynek plus gotowe konta i kreacje Meta/Google. Odpalamy sprzedaż od pierwszego dnia, nie po miesiącach rozgrzewki.</p></div></div><div class="svc reveal" style="transition-delay:0.330s"><button class="svc-top" aria-expanded="false"><span class="si">12</span><b>Marketplace (Allegro +)</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Konfiguracja i listingi na Allegro oraz kolejnych marketplace'ach. Dodatkowe kanały sprzedaży bez budowania ich od zera.</p></div></div><div class="svc reveal" style="transition-delay:0.360s"><button class="svc-top" aria-expanded="false"><span class="si">13</span><b>Influencer i seeding</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Strategia współpracy z twórcami, briefy, seeding i program afiliacyjny. Social proof i zasięg, które budują zaufanie i napędzają sprzedaż.</p></div></div><div class="svc reveal" style="transition-delay:0.390s"><button class="svc-top" aria-expanded="false"><span class="si">14</span><b>Analityka i dashboard</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Jeden dashboard ze sprzedażą, ROAS, CAC, LTV i churnem. Automatyczne raportowanie - wiesz, co działa, bez grzebania w arkuszach.</p></div></div><div class="svc reveal" style="transition-delay:0.400s"><button class="svc-top" aria-expanded="false"><span class="si">15</span><b>Obsługa klienta</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Helpdesk w pełni wsparty automatyzacją i AI: odpowiada na powtarzalne pytania, obsługuje zwroty i odciąża Cię z bieżącej obsługi klienta.</p></div></div></div>
+ <div class="svc-grid"><div class="svc reveal" style="transition-delay:0.000s"><button class="svc-top" aria-expanded="false"><span class="si">01</span><b>Strategia i model marży</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Zaczynamy od liczb, nie od logo. Dobieramy niszę, hero-produkt i model cenowy tak, żeby marka zarabiała od pierwszej sprzedaży, a marża broniła się przy skali.</p></div></div><div class="svc reveal" style="transition-delay:0.030s"><button class="svc-top" aria-expanded="false"><span class="si">02</span><b>Formuła i dobór produktu</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Projektujemy formułę w dawkach klinicznych i format, który wyróżnia się na półce. Wybieramy produkt z sensem biznesowym i powtarzalnością zakupu, nie tylko ładną etykietę.</p></div></div><div class="svc reveal" style="transition-delay:0.060s"><button class="svc-top" aria-expanded="false"><span class="si">03</span><b>Produkcja i kontrola jakości</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Produkcja wyłącznie w zakładach spełniających normy GMP i HACCP. Kontrolujemy każdą partię, żeby jakość była powtarzalna, a nie loteryjna.</p></div></div><div class="svc reveal" style="transition-delay:0.120s"><button class="svc-top" aria-expanded="false"><span class="si">04</span><b>Compliance i prawo (GIS)</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Powiadomienie GIS, zgodna etykieta i wyłącznie dozwolone claimy. Marka startuje legalnie - bez kar, wycofanych partii i blokad reklam.</p></div></div><div class="svc reveal" style="transition-delay:0.150s"><button class="svc-top" aria-expanded="false"><span class="si">05</span><b>Branding i packaging</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Nazwa, identyfikacja i opakowanie gotowe na półkę i pod kamerę. Branding, który komunikuje premium i sprzedaje, zanim klient przeczyta skład.</p></div></div><div class="svc reveal" style="transition-delay:0.180s"><button class="svc-top" aria-expanded="false"><span class="si">06</span><b>Sesja zdjęciowa i kreacje</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Packshoty, lifestyle i gotowe kreacje reklamowe. Materiał, który od pierwszego dnia napędza sklep, social media i kampanie.</p></div></div><div class="svc reveal" style="transition-delay:0.210s"><button class="svc-top" aria-expanded="false"><span class="si">07</span><b>Sklep Shopify i CRO</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Sklep pisany pod konwersję, nie pod ładny wygląd. Karta produktu, porównania i ścieżka zakupowa zoptymalizowane tak, żeby ruch zamieniał się w sprzedaż.</p></div></div><div class="svc reveal" style="transition-delay:0.240s"><button class="svc-top" aria-expanded="false"><span class="si">08</span><b>Subskrypcja i retencja</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Model subskrypcyjny i automatyczne flow e-mail/SMS - powitanie, koszyk, post-zakup, win-back - które same wracają po klienta i podbijają lifetime value.</p></div></div><div class="svc reveal" style="transition-delay:0.270s"><button class="svc-top" aria-expanded="false"><span class="si">09</span><b>Logistyka i fulfillment</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Magazyn, wysyłki i zwroty spięte automatycznie ze sklepem. Skala nie oznacza chaosu, a Ty nie pakujesz paczek ręcznie.</p></div></div><div class="svc reveal" style="transition-delay:0.300s"><button class="svc-top" aria-expanded="false"><span class="si">10</span><b>Launch i kampanie reklamowe</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Plan wejścia na rynek plus gotowe konta i kreacje Meta/Google. Odpalamy sprzedaż od pierwszego dnia, nie po miesiącach rozgrzewki.</p></div></div><div class="svc reveal" style="transition-delay:0.330s"><button class="svc-top" aria-expanded="false"><span class="si">11</span><b>Marketplace (Allegro +)</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Konfiguracja i listingi na Allegro oraz kolejnych marketplace'ach. Dodatkowe kanały sprzedaży bez budowania ich od zera.</p></div></div><div class="svc reveal" style="transition-delay:0.360s"><button class="svc-top" aria-expanded="false"><span class="si">12</span><b>Influencer i seeding</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Strategia współpracy z twórcami, briefy, seeding i program afiliacyjny. Social proof i zasięg, które budują zaufanie i napędzają sprzedaż.</p></div></div><div class="svc reveal" style="transition-delay:0.390s"><button class="svc-top" aria-expanded="false"><span class="si">13</span><b>Analityka i dashboard</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Jeden dashboard ze sprzedażą, ROAS, CAC, LTV i churnem. Automatyczne raportowanie - wiesz, co działa, bez grzebania w arkuszach.</p></div></div><div class="svc reveal" style="transition-delay:0.400s"><button class="svc-top" aria-expanded="false"><span class="si">14</span><b>Obsługa klienta</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Helpdesk w pełni wsparty automatyzacją i AI: odpowiada na powtarzalne pytania, obsługuje zwroty i odciąża Cię z bieżącej obsługi klienta.</p></div></div><div class="svc svc-desk reveal" style="transition-delay:0.420s"><button class="svc-top" aria-expanded="false"><span class="si">15</span><b>Badania laboratoryjne</b><span class="svc-ind"></span></button><div class="svc-desc"><p>Każdą partię badamy w sprawdzonych, niezależnych ośrodkach. Certyfikat jakości to twardy argument sprzedażowy i ochrona przed reklamacjami.</p></div></div></div>
  <div class="svc-cta reveal"><a class="btn btn-accent mag" href="kontakt.html">Zbuduj moją markę</a><p>Pakiety i wycena dobierane do zakresu - omawiamy je na rozmowie.</p></div>
+</div></section>
+<section id="process"><div class="wrap">
+ <div class="sec-head reveal"><span class="ix">(03) &mdash; Jak działamy</span><h2>Od pierwszej rozmowy<br>po gotową markę</h2>
+ <p>Jeden proces, jeden zespół, jedna odpowiedzialność. Bez chaosu i bez przerzucania się między dostawcami.</p></div>
+ <div class="process"><div class="step reveal" style="transition-delay:0.00s"><div class="sn">01</div><div><h3>Rozmowa</h3><p>Bezpłatna konsultacja. Poznajemy Ciebie, produkt i rynek. Mówimy wprost, czy projekt ma sens i jaki ma potencjał.</p></div></div><div class="step reveal" style="transition-delay:0.06s"><div class="sn">02</div><div><h3>Strategia i propozycja</h3><p>Konkretny zakres, harmonogram i stała wycena. Zero ukrytych kosztów, zero rozliczeń godzinowych - wiesz dokładnie, co dostajesz.</p></div></div><div class="step reveal" style="transition-delay:0.12s"><div class="sn">03</div><div><h3>Budowa</h3><p>Składamy markę: formuła, branding, sklep, compliance, logistyka. Dostajesz regularne aktualizacje i działający produkt, nie prezentację.</p></div></div><div class="step reveal" style="transition-delay:0.18s"><div class="sn">04</div><div><h3>Launch i rozkręcenie</h3><p>Odpalamy sprzedaż i pierwsze kampanie. Wspieramy markę w pierwszych tygodniach na rynku.</p></div></div><div class="step reveal" style="transition-delay:0.24s"><div class="sn">05</div><div><h3>Przekazanie</h3><p>Oddajemy gotowy, działający biznes wraz z dokumentacją - tak, żebyś mógł prowadzić go samodzielnie.</p></div></div></div>
 </div></section>
 <section id="zalozyciele"><div class="wrap">
  <div class="sec-head reveal"><span class="ix">(04) &mdash; O nas</span><h2>Dwóch operatorów,<br>nie dwóch teoretyków</h2></div>
@@ -243,13 +245,13 @@ body.loaded .hero h1 .line>span{transform:none}
 <section class="dark final"><div class="wrap">
  <span class="scarcity reveal">Maksymalnie 3 nowe marki na kwartał</span>
  <h2 class="words">Twoja marka<br>może być <em>następna.</em></h2>
- <p class="reveal">Jedna rozmowa. Powiemy wprost, czy się nadajesz, ile to potrwa i ile zarobisz.</p>
+ <p class="reveal">Jedna rozmowa. Powiemy wprost, jaki potencjał ma Twój pomysł, ile to potrwa i ile możesz zarobić.</p>
  <a class="btn btn-accent mag reveal" href="kontakt.html">Zbuduj moją markę</a>
 </div></section>
 <footer><div class="wrap">
  <div class="foot-word">Wellmade<sup>&reg;</sup></div>
  <div class="foot-in"><span>&copy; 2026 Wellmade &mdash; studio marek suplementowych</span>
- <span class="foot-links"><a href="faq.html">FAQ</a><a href="biblioteka.html">Biblioteka</a><a href="kontakt.html">Kontakt</a><a class="mid" href="https://midasforscale.com/" target="_blank" rel="noopener">Midas AI &#8599;</a></span></div>
+ <span class="foot-links"><a href="faq.html">FAQ</a><a href="biblioteka.html">Biblioteka</a><a href="kontakt.html">Kontakt</a><a href="polityka-prywatnosci.html">Polityka prywatności</a><a class="mid" href="https://midasforscale.com/" target="_blank" rel="noopener">Midas AI &#8599;</a></span></div>
 </div></footer><script>
 (function(){
 var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;

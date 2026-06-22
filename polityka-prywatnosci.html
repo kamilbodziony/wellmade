@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kontakt | Wellmade</title>
+<title>Polityka prywatności | Wellmade</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -150,6 +150,23 @@ footer{background:var(--ink);color:var(--paper);padding:48px 0 30px}
  .tier{border-left:0;border-top:1.5px solid var(--ink)}.tier:first-child{border-top:0}
  .ccard{border-left:0;border-top:1.5px solid var(--ink)}.ccard:first-child{border-top:0}
 }
+
+.legal{padding:60px 0 100px}
+.legal .ix{font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--accent);font-weight:700;display:block;margin-bottom:18px}
+.legal h1{font-family:var(--disp);font-weight:900;font-size:clamp(36px,6vw,72px);line-height:.96;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:14px}
+.legal .updated{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:50px}
+.legal .doc{max-width:760px}
+.legal h2{font-family:var(--disp);font-weight:800;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.01em;margin:42px 0 14px;line-height:1.1}
+.legal h2 .qn{color:var(--accent);font-family:var(--mono);font-size:14px;font-weight:700;margin-right:10px;vertical-align:middle}
+.legal p{font-size:16px;line-height:1.62;color:var(--ink2);margin-bottom:14px}
+.legal ul{margin:0 0 16px;padding-left:0;list-style:none}
+.legal li{font-size:16px;line-height:1.58;color:var(--ink2);padding-left:22px;position:relative;margin-bottom:9px}
+.legal li::before{content:"-";position:absolute;left:0;color:var(--accent)}
+.legal .admin-data{margin:6px 0 16px;line-height:1.7}
+.legal .admin-data strong{font-family:var(--disp);font-weight:800;font-size:18px}
+.legal a{color:var(--accent);border-bottom:1px solid var(--accent)}
+.legal .back{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:34px}
+.legal .back:hover{color:var(--accent)}
 </style></head><body><nav><div class="wrap nav-in">
  <a href="index.html" class="logo">Wellmade<sup>&reg;</sup></a>
  <button class="nav-toggle" aria-label="Menu" id="tg">&#9776;</button>
@@ -161,42 +178,70 @@ footer{background:var(--ink);color:var(--paper);padding:48px 0 30px}
   <a class="btn btn-accent mag" href="kontakt.html">Zbuduj markę</a>
  </div>
 </div></nav>
-<header class="hero"><div class="wrap">
- <span class="ix reveal" style="display:block;margin-bottom:20px">&#9670; Kontakt</span>
- <h1 class="reveal" style="font-size:clamp(40px,8vw,96px)">Zbuduj<br>swoją <em>markę.</em></h1>
- <p class="lead reveal" style="margin-top:28px">Wybierz, jak wolisz. Napisz do nas przez formularz albo od razu umów rozmowę w dogodnym terminie. Tak czy inaczej - powiemy wprost, jaki potencjał ma Twój pomysł.</p>
- <div class="contact-grid reveal">
-  <div class="contact-col">
-   <span class="opt-k">Opcja 1</span>
-   <h2>Napisz do nas</h2>
-   <p class="colsub">Zostaw namiary i kilka słów o sobie. Odezwiemy się najszybciej, jak to możliwe.</p>
-   <form action="https://formsubmit.co/k.bodziony@somahealthco.com" method="POST">
-    <input type="hidden" name="_subject" value="Nowe zgłoszenie z wellmade.co">
-    <input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
-    <div class="field"><label>Imię i nazwisko</label><input type="text" name="Imię" required></div>
-    <div class="field"><label>Email</label><input type="email" name="Email" required></div>
-    <div class="field"><label>Telefon</label><input type="tel" name="Telefon" placeholder="np. +48 600 000 000" required></div>
-    <div class="field"><label>Twoja marka / temat</label><input type="text" name="Marka"></div>
-    <div class="field"><label>Na czym Ci zależy?</label><select name="Zakres"><option>Jeszcze nie wiem</option><option>Zbudowanie marki od zera</option><option>Rozwój istniejącej marki</option><option>Skalowanie sprzedaży</option><option>Współpraca za udziały</option></select></div>
-    <div class="field"><label>Wiadomość</label><textarea name="Wiadomość" placeholder="Powiedz nam o sobie i o tym, co chcesz zbudować."></textarea></div>
-    <button class="btn btn-accent" type="submit">Wyślij zgłoszenie</button>
-   </form>
-  </div>
-  <div class="contact-col">
-   <span class="opt-k">Opcja 2</span>
-   <h2>Umów rozmowę</h2>
-   <p class="colsub">Wybierz termin z kalendarza i porozmawiajmy bezpośrednio. 30 minut, konkretnie i bez presji.</p>
-   <div class="cal-wrap">
-    <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-konsultacjawellmadestudio"></div>
-   </div>
-   <p class="cal-alt">Kalendarz się nie ładuje? <a href="https://cal.com/kamil-bodziony-uenhri/konsultacjawellmadestudio" target="_blank" rel="noopener">Otwórz rezerwację &#8599;</a></p>
-  </div>
+<section class="legal"><div class="wrap">
+ <a class="back" href="index.html">&larr; Strona główna</a>
+ <span class="ix">Dokumenty</span>
+ <h1>Polityka prywatności</h1>
+ <div class="updated">Ostatnia aktualizacja: czerwiec 2026</div>
+ <div class="doc">
+
+ <p>Niniejsza polityka prywatności wyjaśnia, w jaki sposób przetwarzamy dane osobowe osób korzystających ze strony internetowej Wellmade oraz kontaktujących się z nami. Zależy nam na tym, aby było to opisane prosto i wprost - bez prawniczego żargonu tam, gdzie nie jest konieczny.</p>
+
+ <h2><span class="qn">01</span>Kto jest administratorem danych</h2>
+ <p>Administratorem Twoich danych osobowych jest:</p>
+ <p class="admin-data"><strong>Soma Sp. z o.o.</strong><br>Białej Floty 2/2<br>02-654 Warszawa<br>NIP: 5214111998</p>
+
+ <h2><span class="qn">02</span>Jakie dane zbieramy</h2>
+ <p>Zbieramy wyłącznie dane, które sam nam przekazujesz, oraz podstawowe dane techniczne niezbędne do działania strony:</p>
+ <ul>
+  <li>Dane z formularza kontaktowego: imię i nazwisko, adres e-mail, numer telefonu, nazwa marki lub temat oraz treść wiadomości.</li>
+  <li>Dane przekazane podczas rezerwacji rozmowy: imię i nazwisko, adres e-mail oraz informacje, które zdecydujesz się podać przy umawianiu terminu.</li>
+  <li>Dane techniczne gromadzone automatycznie, takie jak adres IP, typ przeglądarki i informacje o sposobie korzystania ze strony.</li>
+ </ul>
+
+ <h2><span class="qn">03</span>W jakim celu i na jakiej podstawie</h2>
+ <p>Twoje dane przetwarzamy w następujących celach:</p>
+ <ul>
+  <li>Aby odpowiedzieć na Twoje zapytanie i poprowadzić rozmowę o ewentualnej współpracy - na podstawie naszego prawnie uzasadnionego interesu, jakim jest obsługa kontaktu (art. 6 ust. 1 lit. f RODO).</li>
+  <li>Aby umówić i przeprowadzić rozmowę, którą zarezerwujesz przez kalendarz - na podstawie podjęcia działań na Twoje żądanie przed zawarciem umowy (art. 6 ust. 1 lit. b RODO).</li>
+  <li>Aby zapewnić bezpieczeństwo i prawidłowe działanie strony - na podstawie naszego prawnie uzasadnionego interesu (art. 6 ust. 1 lit. f RODO).</li>
+ </ul>
+
+ <h2><span class="qn">04</span>Komu przekazujemy dane</h2>
+ <p>Twoje dane mogą być przekazywane zaufanym podmiotom, które wspierają nas w prowadzeniu strony i obsłudze kontaktu, wyłącznie w zakresie niezbędnym do realizacji powyższych celów:</p>
+ <ul>
+  <li>Dostawcy usługi obsługi formularza kontaktowego, który przekazuje treść zgłoszenia na nasz adres e-mail.</li>
+  <li>Dostawcy systemu rezerwacji rozmów online (kalendarz).</li>
+  <li>Dostawcy hostingu i infrastruktury, na której działa strona.</li>
+ </ul>
+ <p>Część z tych podmiotów może przetwarzać dane poza Europejskim Obszarem Gospodarczym. W takich przypadkach dbamy o to, aby przekazanie odbywało się z zachowaniem odpowiednich zabezpieczeń przewidzianych w RODO.</p>
+
+ <h2><span class="qn">05</span>Jak długo przechowujemy dane</h2>
+ <p>Dane z kontaktu i rezerwacji przechowujemy przez czas niezbędny do udzielenia odpowiedzi i prowadzenia ewentualnej współpracy, a po jej zakończeniu przez okres wynikający z przepisów prawa lub do czasu przedawnienia ewentualnych roszczeń. Dane techniczne przechowujemy przez okres niezbędny do zapewnienia bezpieczeństwa strony.</p>
+
+ <h2><span class="qn">06</span>Twoje prawa</h2>
+ <p>W związku z przetwarzaniem Twoich danych przysługują Ci następujące prawa:</p>
+ <ul>
+  <li>Prawo dostępu do swoich danych oraz otrzymania ich kopii.</li>
+  <li>Prawo do sprostowania danych, które są nieprawidłowe lub niekompletne.</li>
+  <li>Prawo do usunięcia danych oraz prawo do ograniczenia ich przetwarzania.</li>
+  <li>Prawo do wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie.</li>
+  <li>Prawo do przenoszenia danych.</li>
+  <li>Prawo do wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych, jeśli uznasz, że przetwarzamy Twoje dane niezgodnie z prawem.</li>
+ </ul>
+ <p>Aby skorzystać z któregokolwiek z tych praw, skontaktuj się z nami, korzystając z formularza dostępnego na stronie.</p>
+
+ <h2><span class="qn">07</span>Pliki cookies</h2>
+ <p>Strona może korzystać z plików cookies i podobnych technologii niezbędnych do jej prawidłowego działania oraz z narzędzi dostarczanych przez podmioty obsługujące formularz i kalendarz rezerwacji. Możesz zarządzać plikami cookies w ustawieniach swojej przeglądarki, w tym je blokować lub usuwać.</p>
+
+ <h2><span class="qn">08</span>Zmiany polityki</h2>
+ <p>Możemy aktualizować niniejszą politykę prywatności, na przykład w związku ze zmianami w sposobie działania strony lub w przepisach prawa. Aktualna wersja jest zawsze dostępna na tej stronie, a datę ostatniej aktualizacji znajdziesz na jej górze.</p>
+
  </div>
-</div></header>
-<footer><div class="wrap">
+</div></section><footer><div class="wrap">
  <div class="foot-word">Wellmade<sup>&reg;</sup></div>
  <div class="foot-in"><span>&copy; 2026 Wellmade &mdash; studio marek suplementowych</span>
- <span class="foot-links"><a href="index.html#oferta">Oferta</a><a href="biblioteka.html">Biblioteka</a><a href="faq.html">FAQ</a><a href="kontakt.html">Kontakt</a><a href="polityka-prywatnosci.html">Polityka prywatności</a><a href="https://midasforscale.com/" target="_blank" rel="noopener" style="color:var(--accent)">Midas AI &#8599;</a></span></div>
+ <span class="foot-links"><a href="index.html#oferta">Oferta</a><a href="biblioteka.html">Biblioteka</a><a href="faq.html">FAQ</a><a href="kontakt.html">Kontakt</a><a href="https://midasforscale.com/" target="_blank" rel="noopener" style="color:var(--accent)">Midas AI &#8599;</a></span></div>
 </div></footer><script>
 (function(){var tg=document.getElementById('tg'),menu=document.getElementById('menu');
 if(tg){tg.addEventListener('click',function(){menu.classList.toggle('open')});
@@ -205,15 +250,4 @@ var els=document.querySelectorAll('.reveal');
 if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
 els.forEach(function(e){io.observe(e)});})();
-</script>
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "konsultacjawellmadestudio", {origin:"https://app.cal.com"});
-Cal.config = Cal.config || {};
-Cal.config.forwardQueryParams = true;
-  Cal.ns.konsultacjawellmadestudio("inline", {
-    elementOrSelector:"#my-cal-inline-konsultacjawellmadestudio",
-    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
-    calLink: "kamil-bodziony-uenhri/konsultacjawellmadestudio",
-  });
 </script></body></html>
