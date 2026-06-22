@@ -147,10 +147,15 @@ body.loaded .hero h1 .line>span{transform:none}
 .final p{font-family:var(--sans);color:var(--mutedd);max-width:50ch;margin:0 auto 36px;font-size:18px;text-transform:none;letter-spacing:0;line-height:1.5}
 
 @media(max-width:880px){
+ .hero h1{font-size:clamp(44px,11vw,72px)}
+ .hero .lead{font-size:16px}
+ body .founder .ph img{filter:grayscale(0) contrast(1)}
  .nav-links{position:fixed;inset:68px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:1.5px solid var(--ink);padding:10px 32px 20px;display:none}
  .nav-links.open{display:flex}.nav-links .lk{padding:13px 0;width:100%}.nav-toggle{display:block}
  .stats-grid,.founders{grid-template-columns:1fr}
- .svc-grid{grid-template-columns:1fr 1fr}
+ .svc-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .svc-top{padding:16px 14px;gap:9px}
+ .svc-top b{font-size:14px;overflow-wrap:break-word;hyphens:auto}
  .svc-desk{display:none}
  .svc{border-left:1.5px solid var(--ink);border-top:1.5px solid var(--ink)}
  .svc:nth-child(3n+1){border-left:1.5px solid var(--ink)}
