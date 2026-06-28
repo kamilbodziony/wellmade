@@ -134,6 +134,12 @@ h2.sh em{font-style:normal;color:var(--accent)}
 .show-card .sc-cap{position:absolute;left:0;bottom:0;right:0;padding:28px;background:linear-gradient(transparent,rgba(17,16,12,.85));z-index:2}
 .show-card .sc-cap .nm{font-family:var(--disp);font-weight:800;font-size:1.4rem;text-transform:uppercase;letter-spacing:-.01em}
 .show-card .sc-cap .ds{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--mutedd);margin-top:6px}
+.show-card .sc-cap .sc-go{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s,gap .3s}
+.show-card:hover .sc-cap .sc-go{opacity:1;transform:translateY(0)}
+.show-card:hover .sc-cap .sc-go{gap:14px}
+.show-card{cursor:pointer}
+.show-card .sc-cap{transition:padding-bottom .4s}
+.show-card:hover .sc-cap{padding-bottom:34px}
 .show-col{display:grid;grid-template-rows:1fr 1fr;gap:24px}
 
 /* ========= COMPARE ========= */
@@ -254,7 +260,7 @@ footer{background:var(--ink);color:var(--mutedd);padding:64px 0 44px}
 <div><div class="eyebrow">Studio marek suplementów</div><h1 class="hh" id="hh"><span class="word"><i class="">Firma,</i></span> <span class="word"><i class="">która</i></span> <span class="word"><i class="">buduje</i></span> <span class="word"><i class="">markę</i></span> <span class="word"><i class="em">od</i></span> <span class="word"><i class="em">formuły</i></span> <span class="word"><i class="em">po</i></span> <span class="word"><i class="em">sprzedaż.</i></span></h1><p class="hero-dek">Nie jesteśmy producentem ani agencją od logo. Budujemy całą markę suplementów - produkt, prawo, sklep i launch - tak, żeby sprzedawała dłużej niż jeden sezon.</p><div class="hero-actions"><a class="btn btn-fill" href="kontakt.html">Umów rozmowę<span class="arr">↗</span></a><a class="btn btn-line" href="#proces">Zobacz proces</a></div>
 <div class="hero-strip"><div class="hs-item"><div class="hv">13<span> mln</span></div><div class="hl">zł przychodu - Kanaste</div></div><div class="hs-item"><div class="hv">200<span>k+</span></div><div class="hl">sprzedanych produktów</div></div><div class="hs-item"><div class="hv">3</div><div class="hl">marki kwartalnie - max</div></div></div>
 </div>
-<div class="hero-media"><img src="assets/kanaste-produkty-1.jpg" alt="Marka suplementów Kanaste zbudowana przez Wellmade" loading="eager"><div class="hm-badge">Kanaste / zbudowane przez Wellmade</div></div>
+<div class="hero-media"><img src="assets/soma-cover.jpg" alt="SOMA - marka adaptogenów zbudowana przez Wellmade" loading="eager"><div class="hm-badge">SOMA / zbudowane przez Wellmade</div></div>
 </div></header>
 
 <section class="sec problem"><div class="wrap">
@@ -266,10 +272,10 @@ footer{background:var(--ink);color:var(--mutedd);padding:64px 0 44px}
 <section class="sec showcase"><div class="wrap">
 <div class="show-head"><div class="sec-tag rv">Portfolio <span>/ 02</span></div><h2 class="sh rv rv-d1">Marki, które <em>zbudowaliśmy.</em></h2><p class="rv rv-d2">Nie pokazujemy moodboardów. Pokazujemy marki, które trafiły na rynek, sprzedają i mają klientów. To jest różnica między studiem, które mówi, a studiem, które robi.</p></div>
 <div class="show-grid">
-<div class="show-card rv"><img src="assets/kanaste-innowacyjne-produkty.jpg" alt="Linia produktów Kanaste - better sleep, hydration, focus"><div class="sc-cap"><div class="nm">Kanaste</div><div class="ds">Pełna linia funkcjonalna - od formuły po packaging</div></div></div>
+<a class="show-card rv" href="kanaste.html"><img src="assets/kanaste-innowacyjne-produkty.jpg" alt="Linia produktów Kanaste - better sleep, hydration, focus"><div class="sc-cap"><div class="nm">Kanaste</div><div class="ds">Od 100 tys. do 13 mln zł w 24 miesiące</div><span class="sc-go">Zobacz case study <span class="arr">↗</span></span></div></a>
 <div class="show-col">
-<div class="show-card rv rv-d1"><img src="assets/soma-smak.jpg" alt="SOMA Ashwagandha - premium suplement w kroplach"><div class="sc-cap"><div class="nm">SOMA</div><div class="ds">Adaptogeny premium</div></div></div>
-<div class="show-card rv rv-d2"><img src="assets/kanaste-branding.jpg" alt="System brandingowy Kanaste"><div class="sc-cap"><div class="nm">Identyfikacja</div><div class="ds">System wizualny</div></div></div>
+<a class="show-card rv rv-d1" href="realizacje.html"><img src="assets/soma-smak.jpg" alt="SOMA Ashwagandha - premium suplement w kroplach"><div class="sc-cap"><div class="nm">SOMA</div><div class="ds">Adaptogeny premium - bez etatów</div><span class="sc-go">Zobacz case study <span class="arr">↗</span></span></div></a>
+<a class="show-card rv rv-d2" href="kanaste.html"><img src="assets/kanaste-branding.jpg" alt="System brandingowy Kanaste"><div class="sc-cap"><div class="nm">Identyfikacja</div><div class="ds">System wizualny Kanaste</div><span class="sc-go">Zobacz case study <span class="arr">↗</span></span></div></a>
 </div>
 </div></div></section>
 
