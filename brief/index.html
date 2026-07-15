@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brief &middot; Wellmade &mdash; studio budowy marek</title>
+<meta name="description" content="Wype&#322;nij brief Wellmade &mdash; podstawa do przygotowania wyceny wprowadzenia Twojej marki na rynek.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23ff3a14'/></svg>">
+<!-- Podgl&#261;d linku (OG / Twitter). Podmie&#324; og:url i og:image na sw&#243;j hosting. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brief Wellmade">
+<meta property="og:description" content="Powiedz nam, czym mamy si&#281; zaj&#261;&#263;. Kilka minut &mdash; podstawa Twojej wyceny.">
+<meta property="og:image" content="https://wellmadestudio.pl/brief/brief-og.png">
+<meta property="og:url" content="https://wellmadestudio.pl/brief/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brief Wellmade">
+<meta name="twitter:description" content="Powiedz nam, czym mamy si&#281; zaj&#261;&#263;. Kilka minut &mdash; podstawa Twojej wyceny.">
+<meta name="twitter:image" content="https://wellmadestudio.pl/brief/brief-og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f1ea; --card:#ffffff; --ink:#15120f; --ink-2:#3a352e;
+  --muted:#867d70; --line:#e2ddd1; --line-2:#d3ccbd; --accent:#ff3a14; --accent-ink:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:840px;margin:0 auto;padding:0 24px}
+.mono{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.12em}
+
+/* header */
+header{border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:20}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.hprog{height:3px;background:transparent;position:absolute;left:0;right:0;bottom:-2px}
+.hprog-fill{height:100%;width:0;background:var(--accent);transition:width .35s ease}
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.brand{display:flex;align-items:center;gap:9px}
+.brand .tick{width:14px;height:14px;background:var(--accent)}
+.brand .wm{font-family:'Archivo';font-weight:900;font-size:20px;letter-spacing:-.5px;text-transform:uppercase}
+.brand .wm b{color:var(--accent);font-weight:900}
+.eyebrow{font-size:10px;color:var(--muted)}
+
+/* hero */
+.hero{padding:42px 0 30px;border-bottom:1px solid var(--line)}
+.hero .kick{font-size:11px;color:var(--accent);margin-bottom:16px}
+.hero h1{font-family:'Archivo';font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1.02;letter-spacing:-1px}
+.hero h1 span{color:var(--accent)}
+.hero p{margin-top:16px;max-width:600px;color:var(--ink-2);font-size:16px}
+.progress{margin-top:26px;display:flex;align-items:center;gap:14px}
+.progress .track{flex:1;height:3px;background:var(--line-2);position:relative;overflow:hidden}
+.progress .fill{position:absolute;inset:0 100% 0 0;background:var(--accent);transition:right .35s ease}
+.progress .count{font-size:11px;color:var(--muted);white-space:nowrap}
+
+/* sections */
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
+.sec-head .n{font-family:'Space Mono';font-weight:700;font-size:13px;color:var(--accent)}
+.sec-head h2{font-family:'Archivo';font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:-.2px}
+
+/* identity */
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:10.5px;color:var(--muted)}
+.field label .req{color:var(--accent)}
+.field input,.note textarea{width:100%;background:var(--card);border:1px solid var(--line-2);border-radius:0;
+  padding:12px 13px;font-family:'Inter';font-size:15px;color:var(--ink);transition:border-color .15s}
+.field input:focus,.note textarea:focus{outline:none;border-color:var(--accent)}
+.field input::placeholder,.note textarea::placeholder{color:#b7afa1}
+
+/* scope items */
+.hint{font-size:13px;color:var(--muted);margin:-8px 0 22px}
+.items{display:flex;flex-direction:column;gap:0}
+.item{border-top:1px solid var(--line);padding:20px 0;display:flex;gap:20px;align-items:flex-start;
+  flex-wrap:wrap}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item .body{flex:1;min-width:220px}
+.item .lab{font-size:16px;font-weight:500;color:var(--ink);line-height:1.4}
+.item .sub{font-size:12.5px;color:var(--muted);margin-top:4px}
+.addbtn{margin-top:10px;background:none;border:none;padding:0;cursor:pointer;
+  font-family:'Space Mono';text-transform:uppercase;letter-spacing:.1em;font-size:10px;color:var(--accent);
+  display:inline-flex;align-items:center;gap:6px}
+.addbtn:hover{opacity:.7}
+.addbtn .x{display:inline-block;width:12px;text-align:center;font-weight:700}
+.note{margin-top:12px;display:none}
+.note.open{display:block}
+.note textarea{min-height:64px;resize:vertical}
+
+/* details (progressive disclosure on "tak") */
+.details{max-height:0;opacity:0;overflow:hidden;margin-top:0;padding:0 16px;background:var(--paper);
+  border:1px solid transparent;transition:max-height .32s ease,opacity .25s ease,margin-top .25s ease,padding .25s ease}
+.details.open{max-height:520px;opacity:1;margin-top:14px;padding:14px 16px;border-color:var(--line-2)}
+.det-lab{font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em;font-size:10px;color:var(--muted);margin-bottom:10px}
+.chk{display:flex;align-items:center;gap:10px;padding:6px 0;cursor:pointer;font-size:14px;color:var(--ink-2)}
+.chk input{appearance:none;width:17px;height:17px;border:1px solid var(--ink);background:var(--card);cursor:pointer;flex:0 0 auto;position:relative}
+.chk input:checked{background:var(--accent);border-color:var(--accent)}
+.chk input:checked::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+/* tri-state control */
+.tri{display:inline-flex;border:1px solid var(--ink);flex:0 0 auto}
+.tri button{appearance:none;background:var(--card);border:none;border-right:1px solid var(--ink);
+  padding:10px 15px;cursor:pointer;font-family:'Space Mono';font-weight:700;text-transform:uppercase;
+  letter-spacing:.06em;font-size:11px;color:var(--ink);transition:background .12s,color .12s;white-space:nowrap}
+.tri button:last-child{border-right:none}
+.tri button:hover{background:var(--paper)}
+.tri button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.tri button.no[aria-pressed="true"]{background:var(--ink);color:#fff}
+.tri button.dk[aria-pressed="true"]{background:var(--muted);color:#fff}
+
+/* context / economics / goal blocks */
+.ctx-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.ctx-grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end;margin-top:22px}
+.ctx-field{display:flex;flex-direction:column;gap:9px}
+.ctx-field.mt{margin-top:26px}
+.ctx-field>label{font-size:10.5px;color:var(--muted);font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em}
+.ctx-field>label .req{color:var(--accent)}
+.sub2{font-size:12.5px;color:var(--muted);margin-top:-4px}
+.price{width:100%;background:var(--card);border:1px solid var(--line-2);border-radius:0;padding:12px 13px;
+  font-family:'Inter';font-size:15px;color:var(--ink)}
+.price:focus{outline:none;border-color:var(--accent)}
+.goal-ta{width:100%;background:var(--card);border:1px solid var(--line-2);border-radius:0;padding:12px 13px;
+  font-family:'Inter';font-size:15px;color:var(--ink);min-height:88px;resize:vertical}
+.goal-ta:focus{outline:none;border-color:var(--accent)}
+.goal-ta::placeholder{color:#b7afa1}
+
+/* segmented single-select (reuses tri look) */
+.seg{display:inline-flex;border:1px solid var(--ink);align-self:flex-start;max-width:100%;flex-wrap:wrap}
+.seg button{appearance:none;background:var(--card);border:none;border-right:1px solid var(--ink);
+  padding:10px 15px;cursor:pointer;font-family:'Space Mono';font-weight:700;text-transform:uppercase;
+  letter-spacing:.06em;font-size:11px;color:var(--ink);transition:background .12s,color .12s;white-space:nowrap}
+.seg button:last-child{border-right:none}
+.seg button:hover{background:var(--paper)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+
+/* pills multi/single (budget) */
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pills button{appearance:none;background:var(--card);border:1px solid var(--ink);border-radius:0;
+  padding:11px 16px;cursor:pointer;font-family:'Space Mono';font-weight:700;text-transform:uppercase;
+  letter-spacing:.05em;font-size:11px;color:var(--ink);transition:background .12s,color .12s}
+.pills button:hover{background:var(--paper)}
+.pills button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* checkbox grid (exists, priorities) */
+.chk-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 24px}
+.chk-grid .chk{padding:8px 0;font-size:15px;color:var(--ink-2)}
+#prioCount{font-family:'Space Mono';font-size:11px;color:var(--accent);margin-left:6px}
+.chk input:disabled{opacity:.35;cursor:not-allowed}
+.chk.dim{opacity:.4}
+
+/* submit */
+.foot-actions{padding:34px 0 12px;display:flex;flex-direction:column;gap:18px}
+.submit{align-self:flex-start;background:var(--accent);color:#fff;border:none;border-radius:0;
+  padding:17px 34px;cursor:pointer;font-family:'Archivo';font-weight:800;text-transform:uppercase;
+  letter-spacing:.03em;font-size:15px;transition:transform .1s,background .15s}
+.submit:hover{background:#e42f0c}
+.submit:active{transform:scale(.98)}
+.legal{font-size:11.5px;color:var(--muted);max-width:560px}
+
+/* validation */
+.field.err input, input.err, .price.err, .goal-ta.err{border-color:var(--accent)!important;background:#fff5f2}
+.seg.err{outline:2px solid var(--accent);outline-offset:2px}
+.err-msg{display:none;font-size:11.5px;color:var(--accent);margin-top:6px}
+.err-msg.on{display:block}
+.form-error{display:none;font-size:13px;color:var(--accent);border-left:2px solid var(--accent);
+  padding:8px 12px;background:#fff5f2}
+.form-error.on{display:block}
+
+/* success confirmation */
+.success{display:none;animation:pop .4s ease}
+.success.open{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ok-mark{width:48px;height:48px;background:var(--accent);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-size:26px;font-weight:700;margin-bottom:18px}
+.success h3{font-family:'Archivo';font-weight:800;font-size:24px;letter-spacing:-.4px;margin-bottom:10px}
+.success p{color:var(--ink-2);font-size:15px;max-width:560px;margin-bottom:18px}
+.toggle-sum{background:none;border:none;padding:0;cursor:pointer;font-family:'Space Mono';
+  text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--accent)}
+.toggle-sum:hover{opacity:.7}
+
+/* summary (collapsible) */
+.summary{display:none;margin-top:16px;border:1px solid var(--ink);background:var(--card)}
+.summary.open{display:block}
+.summary .sh{background:var(--ink);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.summary .sh .t{font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:14px}
+.summary .sh .dev{font-family:'Space Mono';font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#ffb3a3}
+.summary table{width:100%;border-collapse:collapse;font-size:13.5px}
+.summary td{padding:11px 18px;border-top:1px solid var(--line);vertical-align:top}
+.summary td.q{color:var(--ink-2)}
+.summary td.a{text-align:right;white-space:nowrap;font-weight:500}
+.summary td.a .tag{font-family:'Space Mono';font-size:10px;text-transform:uppercase;letter-spacing:.06em;
+  padding:3px 8px;border:1px solid var(--line-2)}
+.summary td.a .tag.yes{background:var(--accent);color:#fff;border-color:var(--accent)}
+.summary td.a .tag.no{background:var(--ink);color:#fff;border-color:var(--ink)}
+.summary td.note{padding-top:0;color:var(--muted);font-size:12.5px;text-align:left}
+.summary td.grp{background:var(--paper);font-family:'Space Mono';text-transform:uppercase;letter-spacing:.08em;
+  font-size:10px;color:var(--muted);padding:9px 18px;border-top:1px solid var(--line)}
+
+/* footer */
+footer{padding:30px 0 50px}
+.f-row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:2px solid var(--ink);padding-top:16px}
+.f-row .l{font-family:'Space Mono';font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+
+@media(max-width:640px){
+  .fields{grid-template-columns:1fr}
+  .ctx-grid{grid-template-columns:1fr}
+  .ctx-grid2{grid-template-columns:1fr}
+  .chk-grid{grid-template-columns:1fr}
+  .item{gap:14px}
+  .tri{width:100%}
+  .tri button{flex:1}
+  .hero{padding:32px 0 24px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand"><span class="tick"></span><span class="wm">Well<b>made</b></span></div>
+    <div class="mono eyebrow">Brief &middot; Wyr&oacute;b medyczny</div>
+  </div>
+  <div class="hprog"><div class="hprog-fill" id="hpfill"></div></div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="mono kick">Brief projektowy</div>
+    <h1>Zaznacz, czym mamy <span>si&#281; zaj&#261;&#263;.</span></h1>
+    <p>Ten brief to podstawa Twojej wyceny. Przy ka&#380;dej pozycji zaznacz, czy mamy si&#281; tym zaj&#261;&#263; &mdash; <b>tak</b>, <b>nie</b> albo <b>nie wiem</b>. Je&#347;li chcesz co&#347; dopowiedzie&#263;, rozwi&#324; pole na uwagi. Wype&#322;nienie zajmuje kilka minut.</p>
+    <div class="progress">
+      <div class="track"><div class="fill" id="pfill"></div></div>
+      <div class="mono count" id="pcount">0 / 0 odpowiedzi</div>
+    </div>
+  </div>
+
+  <section id="identity">
+    <div class="sec-head"><span class="n">01</span><h2>Kontakt</h2></div>
+    <div class="fields">
+      <div class="field"><label>Imi&#281; i nazwisko <span class="req">*</span></label><input id="f_name" type="text" placeholder="Jan Kowalski"></div>
+      <div class="field"><label>Firma</label><input id="f_company" type="text" placeholder="Nazwa firmy"></div>
+      <div class="field"><label>E-mail <span class="req">*</span></label><input id="f_email" type="email" placeholder="jan@firma.pl"></div>
+      <div class="field"><label>Telefon</label><input id="f_phone" type="text" placeholder="+48 600 000 000"></div>
+      <div class="field full"><label>Nazwa produktu / kr&oacute;tki opis</label><input id="f_product" type="text" placeholder="Kr&oacute;tko: co to za produkt i kategoria"></div>
+    </div>
+  </section>
+
+  <section id="context">
+    <div class="sec-head"><span class="n">02</span><h2>O produkcie i sytuacji</h2></div>
+
+    <div class="ctx-field">
+      <label>Model biznesowy</label>
+      <div class="pills" data-k="model">
+        <button type="button" data-v="jednorazowy">jednorazowy</button>
+        <button type="button" data-v="subskrypcja">subskrypcja</button>
+        <button type="button" data-v="oba" aria-pressed="true">oba</button>
+      </div>
+    </div>
+    <div class="ctx-grid2">
+      <div class="ctx-field">
+        <label>Rynek</label>
+        <div class="pills" data-k="rynek">
+          <button type="button" data-v="PL" aria-pressed="true">PL</button>
+          <button type="button" data-v="EU">EU</button>
+          <button type="button" data-v="&#347;wiat">&#347;wiat</button>
+        </div>
+      </div>
+      <div class="ctx-field">
+        <label>Orientacyjna cena detaliczna (z&#322;)</label>
+        <input id="f_price" class="price" type="text" inputmode="numeric" value="150">
+      </div>
+    </div>
+
+    <div class="ctx-field mt">
+      <label>Czy produkt jest gotowy do sprzeda&#380;y od strony formalnej? <span class="req">*</span></label>
+      <div class="sub2">Certyfikaty, pozwolenia, wymagane zgody dla Twojej kategorii.</div>
+      <div class="seg" data-k="legal">
+        <button type="button" data-v="tak">tak</button>
+        <button type="button" data-v="nie">nie</button>
+        <button type="button" data-v="nie wiem">nie wiem</button>
+      </div>
+    </div>
+
+    <div class="ctx-field mt">
+      <label>Co ju&#380; masz gotowe?</label>
+      <div class="chk-grid" id="existsBox">
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Strona"><span>Strona</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Sklep internetowy"><span>Sklep internetowy</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Branding / identyfikacja"><span>Branding / identyfikacja</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Logo"><span>Logo</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Zdj&#281;cia produktu"><span>Zdj&#281;cia produktu</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Materia&#322;y wideo"><span>Materia&#322;y wideo</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Opakowania / packaging"><span>Opakowania / packaging</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Domena"><span>Domena</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Konta social media"><span>Konta social media</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Baza mailingowa / klient&oacute;w"><span>Baza mailingowa / klient&oacute;w</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Teksty / copy"><span>Teksty / copy</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Aktywna sprzeda&#380;"><span>Aktywna sprzeda&#380;</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Sprzeda&#380; na marketplace"><span>Sprzeda&#380; na marketplace</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Certyfikaty / pozwolenia"><span>Certyfikaty / pozwolenia</span></label>
+        <label class="chk"><input type="checkbox" data-g="exists" data-v="Nic z powy&#380;szych"><span>Nic z powy&#380;szych</span></label>
+      </div>
+    </div>
+  </section>
+
+  <section id="scope">
+    <div class="sec-head"><span class="n">03</span><h2>Zakres wsp&oacute;&#322;pracy</h2></div>
+    <div class="hint">Zaznacz przy ka&#380;dej pozycji. Skupiamy si&#281; na tym, co dowozimy &mdash; assety i materia&#322;y gotowe do u&#380;ycia.</div>
+    <div class="items" id="items"></div>
+  </section>
+
+  <section id="prio">
+    <div class="sec-head"><span class="n">04</span><h2>Priorytety</h2></div>
+    <div class="hint">Zaznacz maks. <b>3</b> pozycje z zakresu, od kt&oacute;rych zaczynamy. <span id="prioCount">0 / 3</span></div>
+    <div class="chk-grid" id="prioBox"></div>
+  </section>
+
+  <section id="goal">
+    <div class="sec-head"><span class="n">05</span><h2>Bud&#380;et i cel</h2></div>
+    <div class="ctx-field">
+      <label>Orientacyjny bud&#380;et na start</label>
+      <div class="pills" data-k="budget">
+        <button type="button" data-v="do 100 tys. z&#322;">do 100 tys. z&#322;</button>
+        <button type="button" data-v="100-250 tys. z&#322;">100-250 tys. z&#322;</button>
+        <button type="button" data-v="250-500 tys. z&#322;">250-500 tys. z&#322;</button>
+        <button type="button" data-v="500 tys. z&#322;+">500 tys. z&#322;+</button>
+        <button type="button" data-v="jeszcze nie wiem">jeszcze nie wiem</button>
+      </div>
+    </div>
+    <div class="ctx-field mt">
+      <label>Jak wygl&#261;da udany start marki?</label>
+      <div class="sub2">Opisz swoj&#261; wizj&#281; sukcesu &mdash; i co dla Ciebie znaczy praca wykonana naprawd&#281; dobrze. To pomo&#380;e nam celowa&#263; w to, co realnie si&#281; dla Ciebie liczy.</div>
+      <textarea id="f_success" class="goal-ta" placeholder="Twoja wizja udanego startu oraz standard, kt&oacute;ry uznasz za &#347;wietnie wykonan&#261; robot&#281;&hellip;"></textarea>
+    </div>
+  </section>
+
+
+  <div class="foot-actions">
+    <div class="legal">Wysy&#322;aj&#261;c brief zgadzasz si&#281; na kontakt w sprawie wyceny. Twoje odpowiedzi trafiaj&#261; do zespo&#322;u Wellmade i pos&#322;u&#380;&#261; wy&#322;&#261;cznie do przygotowania oferty.</div>
+    <button class="submit" id="submitBtn">Wy&#347;lij brief</button>
+    <div class="form-error" id="formError"></div>
+
+    <div class="success" id="success">
+      <div class="ok-mark">&#10003;</div>
+      <h3>Brief przyj&#281;ty.</h3>
+      <p>Przygotujemy wycen&#281; i odezwiemy si&#281; w ci&#261;gu <b>2 dni roboczych</b>. Kopia Twoich odpowiedzi trafi na podany e-mail &mdash; mo&#380;esz je uzupe&#322;ni&#263; i odes&#322;a&#263; w odpowiedzi.</p>
+      <button class="toggle-sum" id="toggleSum" type="button">Zobacz swoje odpowiedzi</button>
+      <div class="summary" id="summary"><table id="sumTable"></table></div>
+    </div>
+  </div>
+
+
+</main>
+
+<footer>
+  <div class="wrap f-row">
+    <span class="l">Wellmade &middot; studio budowy marek</span>
+    <span class="l">wellmadestudio.pl</span>
+  </div>
+</footer>
+
+<script>
+// ====== WYSYŁKA ======
+// Brief leci na ten adres. Przy PIERWSZYM wysłaniu FormSubmit przyśle 1 mail aktywacyjny — kliknij link i gotowe.
+const EMAIL_TO = "k.bodziony@somahealthco.com";
+// (opcjonalnie, zaawansowane) webhook do Make dla auto-xlsx:
+const WEBHOOK_URL = "";
+// =====================
+
+// ---- edytuj tutaj listę pozycji zakresu ----
+// t = tytuł, s = podtytuł, d = (opcjonalnie) rozwinięcie pokazywane po kliknięciu "tak"
+const ITEMS = [
+  {t:"Strategia wej&#347;cia na rynek i pozycjonowanie", s:"Kierunek, na kt&oacute;rym oprzemy ca&#322;&#261; sprzeda&#380;.",
+    d:["Analiza rynku i konkurencji","Propozycja warto&#347;ci i pozycjonowanie","Grupy docelowe i person","Strategia kana&#322;&oacute;w i lejek sprzeda&#380;y","Roadmapa wdro&#380;enia"]},
+  {t:"Landing / strona sprzeda&#380;owa", s:"Projekt i wdro&#380;enie."},
+  {t:"Sklep internetowy", s:"Konfiguracja p&#322;atno&#347;ci, wysy&#322;ek i integracji."},
+  {t:"Teksty i komunikacja sprzeda&#380;owa", s:"Copy sprzeda&#380;owe, opisy i komunikacja marki."},
+  {t:"Materia&#322;y wizualne i fotografia produktu", s:"Zdj&#281;cia, grafiki, key visuale."},
+  {t:"Zestaw kreacji reklamowych", s:"Assety pod kampanie p&#322;atne (bez prowadzenia kampanii)."},
+  {t:"Tre&#347;ci SEO i biblioteka artyku&#322;&oacute;w", s:"Widoczno&#347;&#263; organiczna i edukacja klienta."},
+  {t:"Materia&#322;y pod influencer&oacute;w i UGC", s:"Selekcja, outreach, briefy kreatywne."},
+  {t:"Email marketing", s:"Szablony i automatyzacje &mdash; retencja i powt&oacute;rny zakup."},
+  {t:"Listing pod marketplace", s:"Karty produktu, grafiki, opisy."},
+  {t:"Doradztwo przy zgodno&#347;ci komunikacji", s:"Zgodno&#347;&#263; tre&#347;ci z wymogami prawnymi kategorii."},
+  {t:"Setup analityki i pomiaru", s:"Wdro&#380;enie pomiaru, dashboard, &#378;r&oacute;d&#322;a danych."}
+];
+// -------------------------------------------------------------
+
+const state = {};
+const wrap = document.getElementById('items');
+const OPTS = [{k:'tak',c:'yes'},{k:'nie',c:'no'},{k:'nie wiem',c:'dk'}];
+
+ITEMS.forEach((it,i)=>{
+  state[i] = {answer:null, note:'', details:[]};
+  const row = document.createElement('div'); row.className='item';
+  const body = document.createElement('div'); body.className='body';
+  let detHtml='';
+  if(it.d && it.d.length){
+    detHtml='<div class="details" id="det'+i+'"><div class="det-lab">Co dok&#322;adnie wchodzi w gr&#281;? (zaznacz)</div>'+
+      it.d.map((x,j)=>'<label class="chk"><input type="checkbox" data-i="'+i+'" data-d="'+x+'"><span>'+x+'</span></label>').join('')+'</div>';
+  }
+  body.innerHTML = '<div class="lab">'+it.t+'</div>'+(it.s?'<div class="sub">'+it.s+'</div>':'')+detHtml+
+    '<button class="addbtn" data-i="'+i+'"><span class="x">+</span> Dodaj informacj&#281;</button>'+
+    '<div class="note" id="note'+i+'"><textarea placeholder="Uwagi (opcjonalnie)" data-i="'+i+'"></textarea></div>';
+  const tri = document.createElement('div'); tri.className='tri';
+  OPTS.forEach(o=>{
+    const b=document.createElement('button'); b.className=o.c; b.type='button';
+    b.textContent=o.k; b.setAttribute('aria-pressed','false');
+    b.onclick=()=>{ state[i].answer=o.k;
+      [...tri.children].forEach(x=>x.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      const det=document.getElementById('det'+i);
+      if(det) det.classList.toggle('open', o.k==='tak');
+      updateProgress(); };
+    tri.appendChild(b);
+  });
+  row.appendChild(body); row.appendChild(tri);
+  wrap.appendChild(row);
+});
+
+wrap.addEventListener('change',e=>{
+  if(e.target.type!=='checkbox')return;
+  const i=e.target.dataset.i, v=e.target.dataset.d, arr=state[i].details;
+  if(e.target.checked){ if(!arr.includes(v)) arr.push(v); }
+  else { state[i].details=arr.filter(x=>x!==v); }
+});
+
+wrap.addEventListener('click',e=>{
+  const t=e.target.closest('.addbtn'); if(!t)return;
+  const n=document.getElementById('note'+t.dataset.i); n.classList.toggle('open');
+  if(n.classList.contains('open')) n.querySelector('textarea').focus();
+});
+wrap.addEventListener('input',e=>{ if(e.target.tagName==='TEXTAREA') state[e.target.dataset.i].note=e.target.value; });
+
+// ---- context / priorities / budget ----
+const meta = {model:'oba', rynek:'PL', legal:null, exists:[], budget:null, prio:[]};
+
+document.querySelectorAll('.seg, .pills').forEach(grp=>{
+  const key=grp.dataset.k;
+  grp.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b)return;
+    [...grp.children].forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true'); meta[key]=b.dataset.v; updateProgress();
+    if(key==='legal'){ grp.classList.remove('err'); }
+  });
+});
+
+document.getElementById('existsBox').addEventListener('change',e=>{
+  const v=e.target.dataset.v;
+  if(e.target.checked){ if(!meta.exists.includes(v)) meta.exists.push(v); }
+  else meta.exists=meta.exists.filter(x=>x!==v);
+});
+
+// priorities rendered from scope list, max 3
+const prioBox=document.getElementById('prioBox');
+ITEMS.forEach((it,i)=>{
+  prioBox.insertAdjacentHTML('beforeend',
+    '<label class="chk"><input type="checkbox" data-p="'+i+'"><span>'+it.t+'</span></label>');
+});
+prioBox.addEventListener('change',e=>{
+  const i=e.target.dataset.p;
+  if(e.target.checked){
+    if(meta.prio.length>=3){ e.target.checked=false; return; }
+    meta.prio.push(i);
+  } else meta.prio=meta.prio.filter(x=>x!==i);
+  document.getElementById('prioCount').textContent=meta.prio.length+' / 3';
+  const full=meta.prio.length>=3;
+  prioBox.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    cb.disabled = full && !cb.checked;
+    cb.closest('.chk').classList.toggle('dim', full && !cb.checked);
+  });
+});
+
+function updateProgress(){
+  const v=id=>{const e=document.getElementById(id);return e&&e.value.trim()};
+  let done=0;
+  const tot=ITEMS.length+4; // scope + name,email,legal,budget
+  done+=Object.values(state).filter(s=>s.answer).length;
+  if(v('f_name'))done++;
+  if(v('f_email'))done++;
+  if(meta.legal)done++;
+  if(meta.budget)done++;
+  const pct=Math.round(done/tot*100);
+  document.getElementById('pfill').style.right=(100-pct)+'%';
+  const hp=document.getElementById('hpfill'); if(hp) hp.style.width=pct+'%';
+  document.getElementById('pcount').innerHTML=pct+'% wype&#322;nione';
+}
+updateProgress();
+['f_name','f_email'].forEach(id=>document.getElementById(id).addEventListener('input',updateProgress));
+
+document.getElementById('submitBtn').onclick=()=>{
+  const tb=document.getElementById('sumTable'); tb.innerHTML='';
+  const esc=s=>(s||'').replace(/</g,'&lt;');
+  const val=id=>{const el=document.getElementById(id);return el?el.value.trim():'';};
+  const rowKV=(k,v)=>tb.insertAdjacentHTML('beforeend','<tr><td class="q">'+k+'</td><td class="a" style="font-weight:400;white-space:normal">'+(v||'<span style="opacity:.4">&mdash;</span>')+'</td></tr>');
+  const head=t=>tb.insertAdjacentHTML('beforeend','<tr><td colspan="2" class="grp">'+t+'</td></tr>');
+
+  // --- walidacja pól wymaganych ---
+  const nameEl=document.getElementById('f_name'), emailEl=document.getElementById('f_email');
+  const legalSeg=document.querySelector('.seg[data-k=legal]');
+  [nameEl,emailEl].forEach(el=>el.classList.remove('err')); legalSeg.classList.remove('err');
+  const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim());
+  const errs=[];
+  if(!nameEl.value.trim()){nameEl.classList.add('err');errs.push('imi&#281; i nazwisko');}
+  if(!emailOk){emailEl.classList.add('err');errs.push('poprawny e-mail');}
+  if(!meta.legal){legalSeg.classList.add('err');errs.push('gotowo&#347;&#263; prawn&#261;');}
+  const fe=document.getElementById('formError');
+  if(errs.length){
+    fe.classList.add('on'); fe.innerHTML='Uzupe&#322;nij: '+errs.join(', ')+'.';
+    const first=document.querySelector('input.err, .seg.err');
+    if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  fe.classList.remove('on');
+
+  // ---- wysyłka danych na webhook (Make) ----
+  const payload={
+    kontakt:{imie_nazwisko:val('f_name'),firma:val('f_company'),email:val('f_email'),telefon:val('f_phone'),produkt:val('f_product')},
+    o_produkcie:{model:meta.model,rynek:meta.rynek,cena_zl:val('f_price'),gotowosc_prawna:meta.legal,juz_gotowe:meta.exists},
+    zakres:ITEMS.map((it,i)=>{const ta=document.querySelector('#note'+i+' textarea');
+      return {pozycja:it.t,odpowiedz:state[i].answer,szczegoly:state[i].details,uwagi:ta?ta.value.trim():''};}),
+    priorytety:meta.prio.map(i=>ITEMS[i].t),
+    budzet:meta.budget,
+    sukces:val('f_success'),
+    wyslano:new Date().toISOString()
+  };
+  if(WEBHOOK_URL){ try{ fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); }catch(e){} }
+
+  // FormSubmit — wysyłka briefu na e-mail (czytelny, spłaszczony)
+  if(EMAIL_TO){
+    const flatScope=ITEMS.map((it,i)=>{
+      const ta=document.querySelector('#note'+i+' textarea');
+      const a=state[i].answer||'—';
+      const d=state[i].details.length?(' ['+state[i].details.join(', ')+']'):'';
+      const u=ta&&ta.value.trim()?(' — '+ta.value.trim()):'';
+      return it.t+': '+a+d+u;
+    }).join('\n');
+    const fs={_subject:'Nowy brief Wellmade — '+(val('f_name')||'bez nazwiska'), _template:'table', _captcha:'false',
+      'Imię i nazwisko':val('f_name'),'Firma':val('f_company'),'E-mail':val('f_email'),'Telefon':val('f_phone'),'Produkt':val('f_product'),
+      'Model':meta.model,'Rynek':meta.rynek,'Cena (zł)':val('f_price'),'Gotowość prawna':meta.legal||'—','Już gotowe':meta.exists.join(', ')||'—',
+      'Zakres':flatScope,'Priorytety':meta.prio.map(i=>ITEMS[i].t).join(', ')||'—','Budżet':meta.budget||'—','Udany start marki':val('f_success')||'—'};
+    try{ fetch('https://formsubmit.co/ajax/'+encodeURIComponent(EMAIL_TO),{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(fs)}); }catch(e){}
+  }
+
+  head('Kontakt');
+  rowKV('Imi&#281; i nazwisko', esc(val('f_name')));
+  rowKV('Firma', esc(val('f_company')));
+  rowKV('E-mail', esc(val('f_email')));
+  rowKV('Telefon', esc(val('f_phone')));
+  rowKV('Produkt', esc(val('f_product')));
+
+  head('O produkcie i sytuacji');
+  rowKV('Model biznesowy', meta.model);
+  rowKV('Rynek', meta.rynek);
+  rowKV('Cena detaliczna', val('f_price')?esc(val('f_price'))+' z&#322;':'');
+  rowKV('Gotowo&#347;&#263; prawna', meta.legal);
+  rowKV('Ju&#380; gotowe', meta.exists.join(', '));
+
+  head('Zakres wsp&oacute;&#322;pracy');
+  ITEMS.forEach((it,i)=>{
+    const ta=document.querySelector('#note'+i+' textarea');
+    const note=(ta?ta.value:state[i].note||'').trim();
+    const a=state[i].answer;
+    const tag = a==='tak'?'<span class="tag yes">tak</span>' : a==='nie'?'<span class="tag no">nie</span>' : a==='nie wiem'?'<span class="tag">nie wiem</span>':'<span class="tag" style="opacity:.5">&mdash;</span>';
+    tb.insertAdjacentHTML('beforeend','<tr><td class="q">'+it.t+'</td><td class="a">'+tag+'</td></tr>');
+    if(a==='tak' && state[i].details.length) tb.insertAdjacentHTML('beforeend','<tr><td class="note" colspan="2">&#8627; '+state[i].details.join(', ')+'</td></tr>');
+    if(note) tb.insertAdjacentHTML('beforeend','<tr><td class="note" colspan="2">&#8627; '+esc(note)+'</td></tr>');
+  });
+
+  head('Priorytety i cel');
+  rowKV('Priorytety', meta.prio.map(i=>ITEMS[i].t).join(', '));
+  rowKV('Bud&#380;et', meta.budget);
+  rowKV('Sukces za 12 mies.', esc(val('f_success')));
+
+  document.getElementById('submitBtn').style.display='none';
+  try{localStorage.removeItem('wellmade_brief');}catch(e){}
+  const suc=document.getElementById('success'); suc.classList.add('open');
+  suc.scrollIntoView({behavior:'smooth',block:'start'});
+};
+document.getElementById('toggleSum').onclick=()=>{
+  const s=document.getElementById('summary'); const open=s.classList.toggle('open');
+  document.getElementById('toggleSum').textContent=open?'Ukryj odpowiedzi':'Zobacz swoje odpowiedzi';
+};
+
+// ---- auto-zapis postępu (działa po zahostowaniu) ----
+const LS='wellmade_brief';
+function save(){
+  try{
+    const d={contact:{},meta:JSON.parse(JSON.stringify(meta)),scope:ITEMS.map((_,i)=>{
+      const ta=document.querySelector('#note'+i+' textarea');
+      return {answer:state[i].answer,note:ta?ta.value:'',details:state[i].details};
+    })};
+    ['f_name','f_company','f_email','f_phone','f_product','f_price','f_success']
+      .forEach(id=>{const el=document.getElementById(id); d.contact[id]=el?el.value:'';});
+    localStorage.setItem(LS,JSON.stringify(d));
+  }catch(e){}
+}
+function restore(){
+  let d; try{d=JSON.parse(localStorage.getItem(LS));}catch(e){}
+  if(!d)return;
+  Object.entries(d.contact||{}).forEach(([id,v])=>{const el=document.getElementById(id); if(el&&v)el.value=v;});
+  ['model','rynek','legal','budget'].forEach(k=>{
+    if(d.meta&&d.meta[k]){ meta[k]=d.meta[k];
+      const grp=document.querySelector('[data-k='+k+']');
+      if(grp) grp.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.v===d.meta[k]?'true':'false'));
+    }
+  });
+  (d.meta&&d.meta.exists||[]).forEach(v=>{ if(!meta.exists.includes(v))meta.exists.push(v);
+    const cb=document.querySelector('#existsBox input[data-v="'+v+'"]'); if(cb)cb.checked=true; });
+  (d.scope||[]).forEach((s,i)=>{
+    if(!ITEMS[i])return;
+    if(s.answer){ state[i].answer=s.answer;
+      const tri=document.querySelectorAll('.item')[i].querySelector('.tri');
+      tri.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed', b.textContent===s.answer?'true':'false'));
+      const det=document.getElementById('det'+i); if(det) det.classList.toggle('open', s.answer==='tak');
+    }
+    if(s.note){ const ta=document.querySelector('#note'+i+' textarea'); if(ta){ta.value=s.note; state[i].note=s.note; document.getElementById('note'+i).classList.add('open');} }
+    (s.details||[]).forEach(v=>{ if(!state[i].details.includes(v))state[i].details.push(v);
+      const cb=document.querySelector('#det'+i+' input[data-d="'+v+'"]'); if(cb)cb.checked=true; });
+  });
+  (d.meta&&d.meta.prio||[]).forEach(i=>{ if(meta.prio.length<3&&!meta.prio.includes(i)){meta.prio.push(i);
+    const cb=document.querySelector('#prioBox input[data-p="'+i+'"]'); if(cb)cb.checked=true;} });
+  const cnt=document.getElementById('prioCount'); if(cnt)cnt.textContent=meta.prio.length+' / 3';
+  const full=meta.prio.length>=3;
+  document.querySelectorAll('#prioBox input').forEach(cb=>{cb.disabled=full&&!cb.checked; cb.closest('.chk').classList.toggle('dim',full&&!cb.checked);});
+  updateProgress();
+}
+restore();
+document.addEventListener('input',save);
+document.addEventListener('change',save);
+document.addEventListener('click',e=>{ if(e.target.closest('.tri button,.seg button,.pills button')) setTimeout(save,0); });
+
+// ---- animacje wejścia sekcji ----
+if('IntersectionObserver' in window){
+  const revs=document.querySelectorAll('.hero, section, .foot-actions');
+  revs.forEach(el=>el.classList.add('reveal'));
+  const io=new IntersectionObserver(ents=>ents.forEach(en=>{ if(en.isIntersecting){en.target.classList.add('in'); io.unobserve(en.target);} }),{threshold:.08});
+  revs.forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>
